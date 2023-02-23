@@ -2,12 +2,14 @@ body{
     background-color: rgb(44, 44, 44);
 }
 .topText{
-    font-size: 100px;
+    font-size: 80px;
     color: aliceblue;
     text-align: center;
 }
 .firstImg{
     max-width: 90%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .firstImgDiv{
     align-items: center;
