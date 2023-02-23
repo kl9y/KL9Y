@@ -17,3 +17,12 @@ body{
     text-align: center;
 }
 
+.prod{
+    width: 20%;
+    margin: 2%;
+}
+.line1{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
