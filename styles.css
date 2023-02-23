@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(44, 44, 44);
+}
+.topText{
+    font-size: 100px;
+    color: aliceblue;
+    text-align: center;
+}
+.firstImg{
+    max-width: 90%;
+}
+.firstImgDiv{
+    align-items: center;
+    text-align: center;
+}
+
