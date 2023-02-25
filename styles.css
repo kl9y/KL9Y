@@ -1,15 +1,40 @@
-@font-face { font-family: Delicious; src: url('assets/Akira_Expanded_Demo.otf'); } 
-@font-face { font-family: Delicious; font-weight: bold; src: url(assets/Akira_Expanded_Demo.otf);}
+@font-face { font-family: Kl9yFont; src: url('assets/Akira_Expanded_Demo.otf'); } 
+@font-face { font-family: Kl9yFont; font-weight: bold; src: url(assets/Akira_Expanded_Demo.otf);}
 
 body{
     background-color: rgb(44, 44, 44);
     max-width: 100%;
     overflow-x: hidden;
+    text-align: center; 
+    justify-content: center; 
+    align-items: center;
+    align-content: center;
+}
+.videoDiv{
+    text-align: center; 
+    align-items: center; 
+    justify-content: center; 
+    display: flex;
 }
 .disc{
     font-size: 30px; 
     color: white;
-    font-family: Delicious;
+    font-family: Kl9yFont;
+}
+.discDiv{
+    width: 50%; 
+    text-align: center; 
+    align-items: center; 
+    flex: auto; 
+    margin: auto; 
+    justify-content: center; 
+    background-image: url('imgs/ouo.jpeg'); 
+    border-radius: 20px;
+}
+.cSoon{
+    font-size: 50px; 
+    color: white;
+    font-family: Kl9yFont;
 }
 .topText{
     font-size: 80px;
@@ -64,5 +89,15 @@ body{
     .kl9yLogo{
         width: 20%;
         margin-top: 5%;
+    }
+    .discDiv{
+        width: 80%; 
+        text-align: center; 
+        align-items: center; 
+        flex: auto; 
+        margin: auto; 
+        justify-content: center; 
+        background-image: url('imgs/ouo.jpeg'); 
+        border-radius: 20px;
     }
 }
