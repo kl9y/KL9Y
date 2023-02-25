@@ -1,7 +1,15 @@
+@font-face { font-family: Delicious; src: url('assets/Akira_Expanded_Demo.otf'); } 
+@font-face { font-family: Delicious; font-weight: bold; src: url(assets/Akira_Expanded_Demo.otf);}
+
 body{
     background-color: rgb(44, 44, 44);
     max-width: 100%;
     overflow-x: hidden;
+}
+.disc{
+    font-size: 30px; 
+    color: white;
+    font-family: Delicious;
 }
 .topText{
     font-size: 80px;
