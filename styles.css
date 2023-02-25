@@ -1,6 +1,7 @@
 body{
     background-color: rgb(44, 44, 44);
     width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     
 }
