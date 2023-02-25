@@ -1,5 +1,8 @@
 body{
     background-color: rgb(44, 44, 44);
+    width: 100%;
+    overflow-x: hidden;
+    
 }
 .topText{
     font-size: 80px;
@@ -30,9 +33,20 @@ body{
 }
 
 .buyingDiv{
-    background-color: red;
+    width: 90%;
+    align-items: center;
+    text-align: center;
+    
+    margin: auto;
 }
-
+.logoHolder{
+    text-align: center; 
+    align-items: center;
+}
+.kl9yLogo{
+    width: 10%;
+    margin-top: 5%;
+}
 
 @media screen and (max-device-width: 480px){
     .buyingDiv{
