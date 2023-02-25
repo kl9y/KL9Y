@@ -36,7 +36,7 @@ body{
     width: 90%;
     align-items: center;
     text-align: center;
-    
+    background-color: red;
     margin: auto;
 }
 .logoHolder{
@@ -48,8 +48,14 @@ body{
     margin-top: 5%;
 }
 
-@media screen and (max-device-width: 480px){
+@media (max-width: 500px){
     .buyingDiv{
         background-color: blue;
+        margin: auto;
+        width: 90%;
+    }
+    .kl9yLogo{
+        width: 20%;
+        margin-top: 5%;
     }
 }
