@@ -84,6 +84,8 @@ body{
     text-decoration: none; 
     padding: 8px;
     font-family: Kl9yFont;
+    font-size: 22px;
+    font-size: 1.2vw;
 }
 .dropdown-content {
     display: none;
@@ -128,5 +130,9 @@ body{
         justify-content: center; 
         background-image: url('imgs/ouo.jpeg'); 
         border-radius: 20px;
+    }
+    .navElem{
+        font-size: 7px;
+        font-size: 1.5vw;
     }
 }
