@@ -169,4 +169,20 @@ h1{
         font-size: 7px;
         font-size: 1.5vw;
     }
+    .prodMain{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+    }
+    .prodDetails{
+        width: 100%;
+        padding-left: 5%;
+    }
+    .buyNowBtn{
+        width: 90%;
+    }
+    .prodImg{
+        width: 90%;
+    }
 }
