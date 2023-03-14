@@ -150,14 +150,11 @@ h1{
 
 
 .container {
-  max-width: 1050px;
-  width: 90%;
-  margin: auto;
+    display: none;
 }
 
 .navbar {
-  width: 100%;
-  
+  display: none;
 }
 
 .nav-container {
@@ -335,4 +332,19 @@ h1{
     .prodImg{
         width: 90%;
     }
+
+    .container {
+        max-width: 1050px;
+        width: 90%;
+        margin: auto;
+        display: block;
+      }
+      
+      .navbar {
+        width: 100%;
+        display: block;
+      }
+      .navBar{
+        display: none;
+      }
 }
