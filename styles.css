@@ -55,13 +55,22 @@ body{
 }
 
 .prod{
-    width: 40%;
-    margin: 2%; 
+    width: 100%;
+    height:auto;
+    
+}
+.imgA{
+  width: 22%;
 }
 .line1{
+    display: flex;
     align-items: center;
-    justify-content: center;
     text-align: center;
+    margin:auto;
+    margin-top: 100px;
+    align-content: center;
+    justify-content: space-between;
+    width: 80%;
 }
 
 .buyingDiv{
@@ -346,5 +355,12 @@ h1{
       }
       .navBar{
         display: none;
+      }
+      .line1{
+        flex-wrap:wrap;
+
+      }
+      .imgA{
+        width:48%;
       }
 }
