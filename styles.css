@@ -62,7 +62,7 @@ body{
 .imgA{ 
   width: 22%;
 }
-.line1{
+.productLines{
     display: flex;
     align-items: center;
     text-align: center;
@@ -356,7 +356,7 @@ h1{
       .navBar{
         display: none;
       }
-      .line1{
+      .productLines{
         flex-wrap:wrap;
 
       }
