@@ -70,10 +70,10 @@
 
         <div class="prodMain">
             <div class="prodImg">
-                <img src="../imgs/products/9-of-hearts/9ofhearts.png" style="width: 100%;">
+                <img src="../imgs/products/splatter-paint/splatter-paint.png" style="width: 100%;">
             </div>
             <div class="prodDetails">
-                <h1>9 Of Hearts Hoodie</h1>
+                <h1>SPLATTER PAINT HELMET HOODIE</h1>
                 <p class="priceText">$ 50</p>
                 <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/6oE7v5fHs6MPdsQ4gj';">BUY NOW</button>
    
