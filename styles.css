@@ -87,7 +87,7 @@ body{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .buyingDiv{
