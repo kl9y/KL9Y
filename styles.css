@@ -318,6 +318,9 @@ h1{
 .nav-container input[type="checkbox"]:checked ~ .logo{
   display: none;
 }
+.thumbnails{
+  width: 20%;
+}
 
 
 
