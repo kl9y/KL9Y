@@ -69,16 +69,12 @@
 
         <div class="prodMain">
             <div class="prodImg">
-                <img  id="productImage" src="../imgs/products/pants/pant white.jpg" style="width: 100%;">
-                <div class="imageThumbnails">
-                    <img class="thumbnails" src="../imgs/products/pants/pant white.jpg" onclick="changeImage('../imgs/products/pants/pant white.jpg')">
-                    <img class="thumbnails" src="../imgs/products/pants/pant black.jpg" onclick="changeImage('../imgs/products/pants/pant black.jpg')">
-                </div>
+                <img  id="productImage" src="../imgs/products/9-of-hearts-pants/9-of-hearts-pants.png" style="width: 100%;">
             </div>
             <div class="prodDetails">
                 <h1>LIMITLESS POTENTIAL PANTS</h1>
                 <p class="priceText">$ 40</p>
-                <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/8wM3eP2UGfjl60o9AK';">BUY NOW</button>
+                <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/8wMg1BgLw3ADfAY00b';">BUY NOW</button>
 
                 <p class = "detailText">DETAILS</p>
                 <p class="detailText">95% polyester, 5% spandex</p>
