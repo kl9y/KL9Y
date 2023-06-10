@@ -58,32 +58,7 @@ function renderNav(){
 }
 
 
-function updateBuyNowLink() {
+function updateBuyNowLink(newURL) {
     var buyNowBtn = document.getElementById('buyNowBtn');
-    var colorOption = document.querySelector('input[name="color"]:checked').value;
-
-    if (colorOption === 'black') {
-      buyNowBtn.setAttribute('onclick', "window.location.href='https://buy.stripe.com/00g6r1eDoefhdsQ004';");
-    } else if (colorOption === 'purple') {
-      buyNowBtn.setAttribute('onclick', "window.location.href='https://buy.stripe.com/3cs9Ddan82wz4WkfZ6';");
-    }
-  }
-
-
-  function redirectToBuy(){
-    var buyNowBtn = document.getElementById('buyNowBtn');
-    var link = buyNowBtn.getAttribute('onclick');
-  
-    if (link) {
-      // Extract the URL from the onclick attribute
-      var url = link.match(/'(.*?)'/);
-      
-      if (url && url[1]) {
-        // Redirect to the extracted URL
-        window.location.href = url[1];
-      }
-      else{
-        window.location.href = 'https://buy.stripe.com/00g6r1eDoefhdsQ004';
-      }
-    }
+    buyNowBtn.setAttribute('onclick', newURL);
   }
