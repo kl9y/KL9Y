@@ -331,6 +331,36 @@ h1{
 }
 
 
+.colorOptions {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.colorOptions input[type="radio"] {
+  display: none;
+}
+
+.colorOptions label {
+  display: inline-block;
+  padding: 8px 12px;
+  margin-right: 10px;
+  font-size: 16px;
+  font-family: Kl9yfont;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.colorOptions label:hover {
+  background-color: #f0f0f0;
+}
+
+.colorOptions input[type="radio"]:checked + label {
+  background-color: #333;
+  color: #fff;
+  border-color: #ffffff;
+}
+
+
 
 
 
