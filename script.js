@@ -58,7 +58,8 @@ function renderNav(){
 }
 
 
-function updateBuyNowLink(newURL) {
+function updateBuyNowLink(newURL, updatedIMG) {
     var buyNowBtn = document.getElementById('buyNowBtn');
     buyNowBtn.setAttribute('onclick', newURL);
+    changeImage(updatedIMG);
   }
