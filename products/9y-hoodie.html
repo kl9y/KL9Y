@@ -20,26 +20,41 @@
 
 
 
-
-
         <div class="prodMain">
             <div class="prodImg">
-                <img  id="productImage" src="../imgs/products/9y-hoodie/d1605d33-0416-437e-9b5b-78af8acd8f07.png" style="width: 100%;">
+                <img  id="productImage" src="../imgs/products/9y-hoodie/KL9YHoodieBlackFront.jpg" style="width: 100%;">
                 <div class="imageThumbnails">
-                    <img class="thumbnails" src="../imgs/products/9y-hoodie/d1605d33-0416-437e-9b5b-78af8acd8f07.png" onclick="changeImage('../imgs/products/9y-hoodie/d1605d33-0416-437e-9b5b-78af8acd8f07.png')">
-                    <img class="thumbnails" src="../imgs/products/9y-hoodie/11e38b58-956d-4c60-badb-50d63c54a260.png" onclick="changeImage('../imgs/products/9y-hoodie/11e38b58-956d-4c60-badb-50d63c54a260.png')">
+                    <img class="thumbnails" src="../imgs/products/9y-hoodie/KL9YHoodieBlackFront.jpg" onclick="changeImage('../imgs/products/9y-hoodie/KL9YHoodieBlackFront.jpg')">
+                    <img class="thumbnails" src="../imgs/products/9y-hoodie/KL9YHoodieBlackBack.jpg" onclick="changeImage('../imgs/products/9y-hoodie/KL9YHoodieBlackBack.jpg')">
+                    
+                    <img class="thumbnails" src="../imgs/products/9y-hoodie/KL9YHoodiePurpleFront.jpg" onclick="changeImage('../imgs/products/9y-hoodie/KL9YHoodiePurpleFront.jpg')">
+                    <img class="thumbnails" src="../imgs/products/9y-hoodie/KL9YHoodiePurpleBack.jpg" onclick="changeImage('../imgs/products/9y-hoodie/KL9YHoodiePurpleBack.jpg')">
+                   
+                    <img class="thumbnails" src="../imgs/products/9y-hoodie/KL9YHoodieWhiteFront.jpg" onclick="changeImage('../imgs/products/9y-hoodie/KL9YHoodieWhiteFront.jpg')">
+                    <img class="thumbnails" src="../imgs/products/9y-hoodie/KL9YHoodieWhiteBack.jpg" onclick="changeImage('../imgs/products/9y-hoodie/KL9YHoodieWhiteBack.jpg')">
                 </div>
             </div>
             <div class="prodDetails">
                 <h1>9Y LOGO HOODIE</h1>
-                <p class="priceText">$ 50</p>
-                <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/00g6r1eDoefhdsQ004';">BUY NOW</button>
+                <p class="priceText">$ 55</p>
+
+                <div class="colorOptions">
+                    <input type="radio" id="colorBlack" name="color" value="black" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/eVag1BgLw7QT74s7sG';`, '../imgs/products/9y-hoodie/KL9YHoodieBlackFront.jpg')" checked>
+                    <label for="colorBlack">Black</label>
+                    
+                    <input type="radio" id="colorPurple" name="color" value="purple" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/dR62aLfHsfjl2Oc28n';` ,'../imgs/products/9y-hoodie/KL9YHoodiePurpleFront.jpg' )">
+                    <label for="colorPurple">Purple</label>
+
+                    <input type="radio" id="colorWhite" name="color" value="white" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/14k6r17aW5ILcoMfZe';` ,'../imgs/products/9y-hoodie/KL9YHoodieWhiteFront.jpg' )">
+                    <label for="colorWhite">White</label>
+                </div>
+                <button id="buyNowBtn" class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/eVag1BgLw7QT74s7sG';">BUY NOW</button>
    
                 
 
                 <p class = "detailText">DETAILS</p>
-                <p class="detailText">50% cotton, 50% polyester blend fleece</p>
-                <p class="detailText">Fabric weight: 8 oz./yd²</p>
+                <p class="detailText">80% cotton, 20% polyester blend fleece</p>
+                <p class="detailText">Fabric weight: 8.5 oz./yd²</p>
                 <p class="detailText">DTG Printed</p>
                
             </div>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Graffiti Hoodie</title>
+        <link rel="icon" type="image/x-icon" href="../imgs/favicon.png">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div class="logoHolder">
+            <a href="https://kl9y.com"><img class="kl9yLogo" src="../imgs/9yOFFICIALSmaller.png"></a>
+        </div>
+        
+        <script src="../script.js"></script>
+        <script>renderNav();</script>
+
+
+
+
+
+        <div class="prodMain">
+            <div class="prodImg">
+                <img  id="productImage" src="../imgs/products/graffiti-hoodie/WhiteGraffiti.jpg" style="width: 100%;">
+                <div class="imageThumbnails">
+                    <img class="thumbnails" src="../imgs/products/graffiti-hoodie/WhiteGraffiti.jpg" onclick="changeImage('../imgs/products/graffiti-hoodie/WhiteGraffiti.jpg')">
+                    <img class="thumbnails" src="../imgs/products/graffiti-hoodie/BlackGraffiti.jpg" onclick="changeImage('../imgs/products/graffiti-hoodie/BlackGraffiti.jpg')">
+                  </div>
+            </div>
+            <div class="prodDetails">
+                <h1>VINTAGE WASH HOODIE</h1>
+                <p class="priceText">$ 40</p>
+                <div class="colorOptions">
+
+                    <input type="radio" id="colorWhite" name="color" value="white" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/cN23eP7aW0oragEbIV';` ,'../imgs/products/graffiti-hoodie/WhiteGraffiti.jpg' )" checked>
+                    <label for="colorWhite">White</label>
+
+                    <input type="radio" id="colorBlack" name="color" value="black" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/5kA7v51QC2wz3Sg5kw';`, '../imgs/products/graffiti-hoodie/BlackGraffiti.jpg')" >
+                    <label for="colorBlack">Black</label>
+                    
+                    
+                </div>
+                <button id="buyNowBtn" class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/5kA7v51QC2wz3Sg5kw';">BUY NOW</button>
+   
+                
+
+                <p class = "detailText">DETAILS</p>
+                <p class="detailText">100% cotton</p>
+                <p class="detailText">8.25 oz fleece</p>
+            </div>
+        </div>
+       
+        
+        <script src ="../script.js"></script>
+    </body>
+</html>

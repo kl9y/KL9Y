@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Vintage Wash Black</title>
+        <title>Limitless Tee</title>
         <link rel="icon" type="image/x-icon" href="../imgs/favicon.png">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,30 +14,28 @@
         <div class="logoHolder">
             <a href="https://kl9y.com"><img class="kl9yLogo" src="../imgs/9yOFFICIALSmaller.png"></a>
         </div>
-        
+
         <script src="../script.js"></script>
         <script>renderNav();</script>
 
-
-
-
-
         <div class="prodMain">
             <div class="prodImg">
-                <img src="../imgs/products/vintage-purple/vintage-purple.jpg" style="width: 100%;">
+                <img  id="productImage" src="../imgs/products/limitless-tee/LimitlessT.jpg" style="width: 100%;">
+                
             </div>
             <div class="prodDetails">
-                <h1>VINTAGE WASH PURPLE HOODIE</h1>
-                <p class="priceText">$ 40</p>
-                <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/3cs9Ddan82wz4WkfZ6';">BUY NOW</button>
-   
+                <h1>LIMITLESS POTENTIAL PANTS</h1>
+                <p class="priceText">$ 35</p>
+                <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/00gcPpan8c793SgdRb';">BUY NOW</button>
+
                 <p class = "detailText">DETAILS</p>
-                <p class="detailText">100% cotton</p>
-                <p class="detailText">8.25 oz fleece</p>
+                <p class="detailText">95% polyester, 5% spandex</p>
+                <p class="detailText">7.5 oz /yd²</p>
+                <p class="detailText">Soft fabric</p>
             </div>
         </div>
        
         
-        <script src="" async defer></script>
+        <script src ="../script.js"></script>
     </body>
 </html>

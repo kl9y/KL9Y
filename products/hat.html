@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>KL9Y Hat</title>
+        <title>9Y Hat</title>
         <link rel="icon" type="image/x-icon" href="../imgs/favicon.png">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,29 +14,52 @@
         <div class="logoHolder">
             <a href="https://kl9y.com"><img class="kl9yLogo" src="../imgs/9yOFFICIALSmaller.png"></a>
         </div>
+        
         <script src="../script.js"></script>
         <script>renderNav();</script>
 
 
+
         <div class="prodMain">
             <div class="prodImg">
-                <img src="../imgs/products/hat/0933314a-e710-4c5b-baa8-ccfc471ad398.png" style="width: 100%;">
+                <img  id="productImage" src="../imgs/products/hat/9YHatWhite.png" style="width: 100%;">
+                <div class="imageThumbnails">
+                    <img class="thumbnails" src="../imgs/products/hat/9YHatWhite.png" onclick="changeImage('../imgs/products/hat/9YHatWhite.png')">
+                    
+                    <img class="thumbnails" src="../imgs/products/hat/9YHatBlack.jpg" onclick="changeImage('../imgs/products/hat/9YHatBlack.jpg')">
+    
+                    <img class="thumbnails" src="../imgs/products/hat/9YHatPurple.jpg" onclick="changeImage('../imgs/products/hat/9YHatPurple.jpg')">
+                </div>
             </div>
             <div class="prodDetails">
-                <h1>9Y LOGO HAT</h1>
+                <h1>9Y LOGO HOODIE</h1>
                 <p class="priceText">$ 30</p>
-                <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/5kAdTteDob353Sg8wF';">BUY NOW</button>
+
+                <div class="colorOptions">
+                    <input type="radio" id="colorWhite" name="color" value="white" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/5kAdTteDob353Sg8wF';` ,'../imgs/products/hat/9YHatWhite.png' )" checked>
+                    <label for="colorWhite">White</label>
+
+                    <input type="radio" id="colorBlack" name="color" value="black" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/3cs8z966Sc794Wk28q';`, '../imgs/products/hat/9YHatBlack.jpg')" >
+                    <label for="colorBlack">Black</label>
+                    
+                    <input type="radio" id="colorPurple" name="color" value="purple" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/cN23eP66S3AD74sbJ1';` ,'../imgs/products/hat/9YHatPurple.jpg' )">
+                    <label for="colorPurple">Purple</label>
+
+                    
+                </div>
+                <button id="buyNowBtn" class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/5kAdTteDob353Sg8wF';">BUY NOW</button>
    
+                
 
                 <p class = "detailText">DETAILS</p>
-                <p class="detailText">100% Cotton twill</p>
-                <p class="detailText">Adjustable Velcro® closure</p>
-                <p class="detailText">6 panel structure</p>
+                <p class="detailText">100% cotton</p>
                 <p class="detailText">Embroidered</p>
+                <p class="detailText">Adjustable velcro</p>
+               
             </div>
         </div>
        
         
-        <script src="" async defer></script>
+        <script src ="../script.js"></script>
     </body>
 </html>
