@@ -65,6 +65,6 @@ function updateBuyNowLink(newURL, updatedIMG) {
   }
 
 
-function changeImage(element, imagePath) {
+function changeImageHover(element, imagePath) {
     element.src = imagePath;
   }
