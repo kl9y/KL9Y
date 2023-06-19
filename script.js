@@ -63,3 +63,8 @@ function updateBuyNowLink(newURL, updatedIMG) {
     buyNowBtn.setAttribute('onclick', newURL);
     changeImage(updatedIMG);
   }
+
+
+function changeImage(element, imagePath) {
+    element.src = imagePath;
+  }
