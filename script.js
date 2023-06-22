@@ -83,3 +83,18 @@ function sizing(){
     </div>
     `);
 }
+
+
+function sizingChange(){
+  var elements = document.getElementsByClassName("sizingKlay");
+  var button = document.getElementById("toggleButton");
+  for (var i = 0; i < elements.length; i++) {
+    if (elements[i].style.display === "none" || elements[i].style.display === "") {
+      elements[i].style.display = "block";
+      button.textContent = "˄ SIZE GUIDE";
+    } else {
+      elements[i].style.display = "none";
+      button.textContent = "˅ SIZE GUIDE";
+    }
+  }
+}

@@ -152,6 +152,7 @@ h1{
     font-family: Kl9yFont;
     color: white;
     margin-top: 0;
+    max-width: 80%;
 }
 .priceText{
     font-family: Arial, Helvetica, sans-serif;
@@ -393,6 +394,27 @@ h1{
 }
 
 
+.sizingKlay{
+  display: none;
+  max-width: 90%;
+}
+
+.sizingBtnKlay{
+  width: 80%;
+  height: 3rem;
+  background-color: #333;
+  border: none;
+  font-family: Kl9yFont;
+  color: white;
+  font-size: large;
+  text-align: left;
+}
+
+.sizeChartDivKlay button:hover{
+  cursor: pointer;
+}
+
+
 
 
 
@@ -435,6 +457,9 @@ h1{
     }
     .buyNowBtn{
         width: 90%;
+    }
+    .sizingBtnKlay{
+      width: 90%;
     }
     .prodImg{
         width: 90%;
