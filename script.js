@@ -72,11 +72,12 @@ function sizing(){
     document.write(`
     <div class="sizing-dropdownmenu">
       <div class="sizing-container">
+      <p class="sizing-txt">Sizing</p>
           <input class="checkbox1" type="checkbox" name="" id="" />
-          <div class="hamburger-lines1">
+          <div class="sizing-lines1">
           </div>  
         <div class="menu-items1">
-          <li><img class="prod" src="imgs/products/9y-hoodie/KL9YHoodieBlackBack.png" >  <p>Sizing</p>  </img></li>
+        <li class="sizing-li"><img class="prod" src="../imgs/products/9y-hoodie/sizing-chart(9YHoodie).png" ></img></li>
         </div>
       </div>
     </div>
