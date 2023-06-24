@@ -328,6 +328,7 @@ h1{
 }
 .thumbnails{
   width: 20%;
+  cursor: pointer;
 }
 .sizing-container input[type="checkbox"]:checked ~ .menu-items1{
   display: block;
