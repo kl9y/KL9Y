@@ -107,6 +107,7 @@ function addToCart(imgUrl, prodId){
 
   itemsStorage.push([imgUrl,prodId]);
   localStorage.setItem("items", JSON.stringify(itemsStorage));
+  location.replace("https://kl9y.com/cart");
 }
 
 function removeFromCart(imgUrl, prodId){
