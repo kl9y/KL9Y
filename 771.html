@@ -11,15 +11,22 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div style="text-align: center; align-items: center; justify-content: center; display: flex;">
-             <video autoplay muted playsinline defaultMuted loop id="myVideo" style="width: 110%; overflow: hidden;">
+        <script src="script.js"></script>
+        
+        <div class="cartContainer">
+            <a href="https://kl9y.com/cart"><img class="cart" src="./assets/cart.png"></a> 
+            <script>totalCart()</script>
+        </div>
+        
+        <div class="videoContainer">
+             <video autoplay muted playsinline defaultMuted loop id="myVideo" style="width: 100%; overflow: hidden;">
                  <source src="imgs/WebVidBGLogo.mp4" type="video/mp4">
              </video>
          </div>
 
+         
 
-
-         <script src="script.js"></script>
+         
          <script>renderNav();</script>
 
 
@@ -103,6 +110,5 @@
         <div style="margin-bottom: 50rem;"></div>
 
         
-        <script src="" async defer></script>
     </body>
 </html>

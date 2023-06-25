@@ -139,3 +139,21 @@ function showCart(){
   
 
 }
+
+function totalCart(){
+  console.log("here");
+  let itemsStorage = localStorage.getItem("items")
+  ? JSON.parse(localStorage.getItem("items"))
+  : [];
+  let tempNum=0;
+  itemsStorage.forEach(() =>{
+    tempNum++;
+  })
+  if(tempNum == 0){
+    document.write(`<p class="cartTotal"></p> `);
+  }
+  else{
+    document.write(`<p class="cartTotal">${tempNum}</p> `);
+  }
+  
+}
