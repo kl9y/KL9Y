@@ -98,3 +98,44 @@ function sizingChange(){
     }
   }
 }
+
+
+function addToCart(imgUrl, prodId){
+  let itemsStorage = localStorage.getItem("items")
+  ? JSON.parse(localStorage.getItem("items"))
+  : [];
+
+  itemsStorage.push([imgUrl,prodId]);
+  localStorage.setItem("items", JSON.stringify(itemsStorage));
+}
+
+function removeFromCart(imgUrl, prodId){
+  let itemsStorage = localStorage.getItem("items")
+  ? JSON.parse(localStorage.getItem("items"))
+  : [];
+  
+  const index = itemsStorage.indexOf([imgUrl,prodId]);
+  let tupleIndex = itemsStorage.findIndex((tuple) => JSON.stringify(tuple) === JSON.stringify([imgUrl,prodId]));
+  console.log(tupleIndex);
+
+  if (tupleIndex > -1) {
+    itemsStorage.splice(tupleIndex, 1);
+    localStorage.setItem("items", JSON.stringify(itemsStorage));
+}
+
+    location.reload();
+
+}
+
+function showCart(){
+  let itemsStorage = localStorage.getItem("items")
+  ? JSON.parse(localStorage.getItem("items"))
+  : [];
+
+  itemsStorage.forEach((note) =>{
+    document.write(`<div> <img src="${note[0]}"> <button onclick=" removeFromCart('${note[0]}', '${note[1]}') ">REMOVE THIS ITEM</button> </div> `);
+    console.log(note[0]);
+  })
+  
+
+}
