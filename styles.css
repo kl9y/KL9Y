@@ -9,6 +9,10 @@ body{
     justify-content: center; 
     align-items: center;
     align-content: center;
+    text-align: center;
+}
+.cartLabel{
+  margin: auto;
 }
 .videoDiv{
     text-align: center; 
@@ -420,9 +424,6 @@ h1{
   width: 30px;
   filter: invert(1);
  
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-right: 5px;
   
 }
 
@@ -430,12 +431,20 @@ h1{
   text-align: center; align-items: center; justify-content: center; display: block;
 }
 .cartTotal{
-  justify-content: center;margin: auto; margin-right: 50px;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 50px;
   font-family: Kl9yFont;
   color: white;
 }
 .cartContainer{
-  display: flex; flex-direction: row; float: right; text-align: center; justify-content: center;
+  display: flex; 
+  flex-direction: row; 
+  text-align: center; 
+  justify-content: center; 
+  margin-left: auto;
+  align-items: center;
+  margin-left: 60%;
 }
 
 
