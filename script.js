@@ -140,7 +140,12 @@ function showCart(){
   : [];
 
   itemsStorage.forEach((note) =>{
-    document.write(`<div> <img src="${note[0]}"> <button onclick=" removeFromCart('${note[0]}', '${note[1]}', '${note[2]}', '${note[3]}') ">REMOVE THIS ITEM</button> </div> `);
+    document.write(`<div class="cartRow">
+    <img class="cartImg" src="${note[0]}">
+    <p class="cartItemName">${note[3]}</p>
+    <p class="cartPrice">${note[2]}</p>
+    <button class="cartRemoveBtn" onclick="removeFromCart('${note[0]}', '${note[1]}', '${note[2]}', '${note[3]}')">X</button>
+</div>`);
     console.log(note[0]);
   })
   
