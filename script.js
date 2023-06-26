@@ -104,19 +104,25 @@ function addToCart(imgUrl, prodId){
   let itemsStorage = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
+  var priceText = document.querySelector('.priceText');
+  var price = priceText.textContent.trim();
 
-  itemsStorage.push([imgUrl,prodId]);
+  var h1Tag = document.querySelector('h1'); 
+  var itemName = h1Tag.textContent.trim();
+
+
+  itemsStorage.push([imgUrl,prodId,price, itemName]);
   localStorage.setItem("items", JSON.stringify(itemsStorage));
   location.replace("https://kl9y.com/cart");
 }
 
-function removeFromCart(imgUrl, prodId){
+function removeFromCart(imgUrl, prodId, price, itemName){
   let itemsStorage = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
   
-  const index = itemsStorage.indexOf([imgUrl,prodId]);
-  let tupleIndex = itemsStorage.findIndex((tuple) => JSON.stringify(tuple) === JSON.stringify([imgUrl,prodId]));
+  const index = itemsStorage.indexOf([imgUrl,prodId,price,itemName]);
+  let tupleIndex = itemsStorage.findIndex((tuple) => JSON.stringify(tuple) === JSON.stringify([imgUrl,prodId,price,itemName]));
   console.log(tupleIndex);
 
   if (tupleIndex > -1) {
@@ -134,7 +140,7 @@ function showCart(){
   : [];
 
   itemsStorage.forEach((note) =>{
-    document.write(`<div> <img src="${note[0]}"> <button onclick=" removeFromCart('${note[0]}', '${note[1]}') ">REMOVE THIS ITEM</button> </div> `);
+    document.write(`<div> <img src="${note[0]}"> <button onclick=" removeFromCart('${note[0]}', '${note[1]}', '${note[2]}', '${note[3]}') ">REMOVE THIS ITEM</button> </div> `);
     console.log(note[0]);
   })
   
