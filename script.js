@@ -153,7 +153,6 @@ function showCart(){
 }
 
 function totalCart(){
-  console.log("here");
   let itemsStorage = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
@@ -168,4 +167,41 @@ function totalCart(){
     document.write(`<p class="cartTotal">${tempNum}</p> `);
   }
   
+}
+
+async function checkout(){
+  let itemsStorage = localStorage.getItem("items")
+  ? JSON.parse(localStorage.getItem("items"))
+  : [];
+  let stripeIds = [];
+  itemsStorage.forEach((item) =>{
+    stripeIds.push({id: item[1], quantity: 1});
+  }
+  );
+  if(stripeIds.length > 0){
+    console.log('STRIPE REQ');
+    console.log(stripeIds);
+
+    await fetch('https://kl9y.onrender.com/checkout', {
+      method: 'POST', 
+      headers: {
+       'Content-Type': 'application/json',
+        },
+
+        body: JSON.stringify( {items: stripeIds}),
+          }).then((response) => {
+            console.log("response.url2");
+            return response.json();
+              }).then((response) => {
+                  console.log("response.url");
+                  if(response.url){
+                  console.log(response.url);
+                  window.location.assign(response.url);
+                }});
+  }
+  else{
+    console.log("no items");
+  }
+
+
 }
