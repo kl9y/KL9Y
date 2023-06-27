@@ -1,3 +1,4 @@
+
 function changeImage(imageURL) {
     document.getElementById("productImage").src = imageURL;
 }
@@ -177,17 +178,15 @@ async function checkout(){
   itemsStorage.forEach((item) =>{
     stripeIds.push({id: item[1], quantity: 1});
   }
-  );
+  )
   if(stripeIds.length > 0){
     console.log('STRIPE REQ');
     console.log(stripeIds);
-
     await fetch('https://kl9y.onrender.com/checkout', {
       method: 'POST', 
       headers: {
        'Content-Type': 'application/json',
         },
-
         body: JSON.stringify( {items: stripeIds}),
           }).then((response) => {
             console.log("response.url2");
@@ -200,8 +199,54 @@ async function checkout(){
                 }});
   }
   else{
-    console.log("no items");
+    console.log("");
   }
-
-
 }
+
+async function emptyReq(stripeIds){
+  await fetch('https://kl9y.onrender.com/checkout', {
+      method: 'POST', 
+      headers: {
+       'Content-Type': 'application/json',
+        },
+        body: JSON.stringify( {items: stripeIds}),
+          }).then((response) => {
+            console.log("response.url2");
+            return response.json();
+              }).then((response) => {
+                  console.log("response.url");
+                  if(response.url){
+                  console.log(response.url);
+                  window.location.assign(response.url);
+                }});
+}
+
+
+function makeInitReq(){
+  var now = new Date().getTime();
+  let latestReq = localStorage.getItem("time")
+  ? JSON.parse(localStorage.getItem("time"))
+  : "";
+  if(latestReq ==""){
+    emptyReq([]);
+    localStorage.setItem("time", JSON.stringify(now));
+  }
+  else{
+    var storedDate = new Date(parseInt(latestReq)).getTime();
+    var distance = now - storedDate;
+    var daysSince= Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hoursSince=Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minsSince=Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    if(daysSince > 0 || hoursSince > 0 || minsSince > 20){
+      //make a request
+      //update stored time to current
+      emptyReq([]);
+      localStorage.setItem("time", JSON.stringify(now));
+    }
+    else{
+      console.log("");
+    }
+    
+  }
+}
+

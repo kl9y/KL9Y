@@ -470,12 +470,14 @@ h1{
   border-width: 1px; 
   border-color: black; 
   border-style: solid;
-  -moz-box-shadow: 0px 0px 3px rgba(0,0,0,.5);
-  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.5);
+  -moz-box-shadow: 0px 0px 6px rgba(0,0,0,.5);
+  -webkit-box-shadow: 0px 0px 6px rgba(0,0,0,.5);
   box-shadow: 0px 0px 6px rgba(0,0,0,.5);
+  border-radius: 10px;
 
   margin-bottom: 10px;
 }
+
 .cartImg{
   width: 10%; 
   margin-top: 20px; 
