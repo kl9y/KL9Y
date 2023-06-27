@@ -180,6 +180,9 @@ async function checkout(){
   }
   )
   if(stripeIds.length > 0){
+    let loadingAnimation = document.getElementById('loadingAnimation');
+    loadingAnimation.style.display = 'block'; // Show the loading animation
+
     console.log('STRIPE REQ');
     console.log(stripeIds);
     await fetch('https://kl9y.onrender.com/checkout', {
@@ -189,14 +192,17 @@ async function checkout(){
         },
         body: JSON.stringify( {items: stripeIds}),
           }).then((response) => {
-            console.log("response.url2");
             return response.json();
               }).then((response) => {
-                  console.log("response.url");
                   if(response.url){
-                  console.log(response.url);
+                  loadingAnimation.style.display = 'block';
                   window.location.assign(response.url);
-                }});
+                }
+                else{
+                  loadingAnimation.style.display = 'block';
+                }
+              
+              });
   }
   else{
     console.log("");

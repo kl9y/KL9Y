@@ -522,6 +522,42 @@ h1{
 }
 
 
+#loadingAnimation {
+  display: none; 
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  font-family: Kl9yFont;
+  font-weight: bold;
+  color: white;
+  background-color: #ce6ee9;
+  border: 1px solid black;
+ 
+  margin-left: 20px;
+  
+  margin-right: 20px;
+ 
+}
+
+/* Add animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loadingAnimation::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border: 3px solid white;
+  border-top-color: #ce6ee9;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+
 @media (max-width: 500px){
     .buyingDiv{
         background-color: blue;
