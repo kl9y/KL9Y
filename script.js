@@ -279,3 +279,27 @@ function showOrder(){
     console.log(note[0]);
   })
 }
+
+
+async function successOrder(){
+  const urlParams = new URLSearchParams(window.location.search);
+  const sessionId = urlParams.get("session_id");
+
+  await fetch('https://kl9y.onrender.com/success', {
+      method: 'POST', 
+      headers: {
+       'Content-Type': 'application/json',
+        },
+        body: JSON.stringify( {items: stripeIds}),
+          }).then((response) => {
+            return response.json();
+              }).then((response) => {
+                  if(response.url){
+                  loadingAnimation.style.display = 'block';
+                  localStorage.setItem("orderPlaced", "110");
+                  window.location.assign(response.url);
+                }
+              
+              
+              });
+}
