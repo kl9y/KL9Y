@@ -283,21 +283,22 @@ function showOrder(){
 
 async function successOrder(){
   const urlParams = new URLSearchParams(window.location.search);
-  const sessionId = urlParams.get("session_id");
+  const k9sessionId = urlParams.get("session_id");
 
   await fetch('https://kl9y.onrender.com/success', {
       method: 'GET', 
       headers: {
        'Content-Type': 'application/json',
         },
-        
+        body: JSON.stringify( {items: k9sessionId}),
           }).then((response) => {
             return response.json();
               }).then((response) => {
                   if(response.url){
-                  
-                 
                   console.log(response.url);
+                }
+                else{
+                  console.log("nothing");
                 }
               });
 }
