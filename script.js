@@ -286,7 +286,7 @@ async function successOrder(){
   const sessionId = urlParams.get("session_id");
 
   await fetch('https://kl9y.onrender.com/success', {
-      method: 'POST', 
+      method: 'GET', 
       headers: {
        'Content-Type': 'application/json',
         },
@@ -299,7 +299,5 @@ async function successOrder(){
                   localStorage.setItem("orderPlaced", "110");
                   window.location.assign(response.url);
                 }
-              
-              
               });
 }
