@@ -296,7 +296,7 @@ async function successOrder(){
   }
 
   console.log("past if");
-  await fetch(`http://kl9y.onrender.com/success?session_id=${k9sessionId}`)
+  await fetch(`https://kl9y.onrender.com/success?session_id=${k9sessionId}`)
     .then((response) => response.json())
     .then((response) => {
       if (response.custName) {
