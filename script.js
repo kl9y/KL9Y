@@ -263,9 +263,16 @@ function showOrder(){
   let itemsStorage = localStorage.getItem("latestOrder")
   ? JSON.parse(localStorage.getItem("latestOrder"))
   : [];
+  let orderName = localStorage.getItem("orderName");
+  let orderPrice = localStorage.getItem("orderPrice");
+  document.write(`
+    <div> ${orderName} </div>
+    <div> ${orderPrice} </div>
+  `);
 
   itemsStorage.forEach((note) =>{
-    document.write(`<div class="cartRow">
+    document.write(`
+    <div class="cartRow">
     <img class="cartImg" src="${note[0]}">
     <p class="cartItemName">${note[3]}</p>
     <p class="cartPrice">${note[2]}</p>
@@ -301,9 +308,9 @@ async function successOrder(){
     .then((response) => {
       if (response.custName) {
         localStorage.setItem("sesId", JSON.stringify(k9sessionId));
+        localStorage.setItem("orderName", JSON.stringify(response.custName));
+        localStorage.setItem("orderPrice", JSON.stringify(ordPrice));
         moveCartToLatestOrder();
-        console.log(response.custName);
-        console.log(response.ordPrice);
       } else {
         console.log("nothing");
       }
@@ -315,10 +322,8 @@ function moveCartToLatestOrder(){
   ? JSON.parse(localStorage.getItem("items"))
   : [];
   localStorage.setItem("latestOrder", JSON.stringify(itemsStorage));
-
-
+  location.reload();
 }
-
 
 async function successOrderLocal(){
   const urlParams = new URLSearchParams(window.location.search);
