@@ -149,8 +149,6 @@ function showCart(){
 </div>`);
     console.log(note[0]);
   })
-  
-
 }
 
 function totalCart(){
@@ -170,44 +168,7 @@ function totalCart(){
   
 }
 
-async function checkout(){
-  let itemsStorage = localStorage.getItem("items")
-  ? JSON.parse(localStorage.getItem("items"))
-  : [];
-  let stripeIds = [];
-  itemsStorage.forEach((item) =>{
-    stripeIds.push({id: item[1], quantity: 1});
-  }
-  )
-  if(stripeIds.length > 0){
-    let loadingAnimation = document.getElementById('loadingAnimation');
-    loadingAnimation.style.display = 'block'; // Show the loading animation
 
-    console.log('STRIPE REQ');
-    console.log(stripeIds);
-    await fetch('https://kl9y.onrender.com/checkout', {
-      method: 'POST', 
-      headers: {
-       'Content-Type': 'application/json',
-        },
-        body: JSON.stringify( {items: stripeIds}),
-          }).then((response) => {
-            return response.json();
-              }).then((response) => {
-                  if(response.url){
-                  loadingAnimation.style.display = 'block';
-                  window.location.assign(response.url);
-                }
-                else{
-                  loadingAnimation.style.display = 'block';
-                }
-              
-              });
-  }
-  else{
-    console.log("");
-  }
-}
 
 async function emptyReq(stripeIds){
   await fetch('https://kl9y.onrender.com/checkout', {
@@ -256,3 +217,65 @@ function makeInitReq(){
   }
 }
 
+async function checkout(){
+  let itemsStorage = localStorage.getItem("items")
+  ? JSON.parse(localStorage.getItem("items"))
+  : [];
+  let stripeIds = [];
+  itemsStorage.forEach((item) =>{
+    stripeIds.push({id: item[1], quantity: 1});
+  }
+  )
+  if(stripeIds.length > 0){
+    let loadingAnimation = document.getElementById('loadingAnimation');
+    loadingAnimation.style.display = 'block'; // Show the loading animation
+
+    console.log('STRIPE REQ');
+    console.log(stripeIds);
+    await fetch('https://kl9y.onrender.com/checkout', {
+      method: 'POST', 
+      headers: {
+       'Content-Type': 'application/json',
+        },
+        body: JSON.stringify( {items: stripeIds}),
+          }).then((response) => {
+            return response.json();
+              }).then((response) => {
+                  if(response.url){
+                  loadingAnimation.style.display = 'block';
+                  localStorage.setItem("orderPlaced", "110");
+                  window.location.assign(response.url);
+                }
+                else{
+                  //error occurred making link
+                  loadingAnimation.style.display = 'none';
+                }
+              
+              });
+  }
+  else{
+    console.log("");
+  }
+}
+
+
+function showOrder(){
+
+  let orderPlacedId = localStorage.getItem("orderPlaced")
+  ? JSON.parse(localStorage.getItem("orderPlaced"))
+  : "771";
+
+  let itemsStorage = localStorage.getItem("items")
+  ? JSON.parse(localStorage.getItem("items"))
+  : [];
+
+  itemsStorage.forEach((note) =>{
+    document.write(`<div class="cartRow">
+    <img class="cartImg" src="${note[0]}">
+    <p class="cartItemName">${note[3]}</p>
+    <p class="cartPrice">${note[2]}</p>
+    
+</div>`);
+    console.log(note[0]);
+  })
+}
