@@ -309,7 +309,7 @@ async function successOrder(){
       if (response.custName) {
         localStorage.setItem("sesId", JSON.stringify(k9sessionId));
         localStorage.setItem("orderName", JSON.stringify(response.custName));
-        localStorage.setItem("orderPrice", JSON.stringify(ordPrice));
+        localStorage.setItem("orderPrice", JSON.stringify(response.ordPrice));
         moveCartToLatestOrder();
       } else {
         console.log("nothing");
