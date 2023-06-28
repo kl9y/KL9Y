@@ -260,13 +260,8 @@ async function checkout(){
 
 
 function showOrder(){
-
-  let orderPlacedId = localStorage.getItem("orderPlaced")
-  ? JSON.parse(localStorage.getItem("orderPlaced"))
-  : "771";
-
-  let itemsStorage = localStorage.getItem("items")
-  ? JSON.parse(localStorage.getItem("items"))
+  let itemsStorage = localStorage.getItem("latestOrder")
+  ? JSON.parse(localStorage.getItem("latestOrder"))
   : [];
 
   itemsStorage.forEach((note) =>{
@@ -282,23 +277,78 @@ function showOrder(){
 
 
 async function successOrder(){
+  
   const urlParams = new URLSearchParams(window.location.search);
   const k9sessionId = urlParams.get("session_id");
+  console.log(k9sessionId);
 
-  await fetch('https://kl9y.onrender.com/success', {
-      method: 'GET', 
-      headers: {
-       'Content-Type': 'application/json',
-        },
-        body: JSON.stringify( {items: k9sessionId}),
-          }).then((response) => {
-            return response.json();
-              }).then((response) => {
-                  if(response.url){
-                  console.log(response.url);
-                }
-                else{
-                  console.log("nothing");
-                }
-              });
+  let recentSId = localStorage.getItem("sesId")
+  ? JSON.parse(localStorage.getItem("sesId"))
+  : "";
+  
+  //if a success request of this session id has already been made and stored into memory
+  if(recentSId === k9sessionId){
+    return;
+  }
+
+  if(k9sessionId === null){
+    return;
+  }
+
+  console.log("past if");
+  await fetch(`http://kl9y.onrender.com/success?session_id=${k9sessionId}`)
+    .then((response) => response.json())
+    .then((response) => {
+      if (response.custName) {
+        localStorage.setItem("sesId", JSON.stringify(k9sessionId));
+        moveCartToLatestOrder();
+        console.log(response.custName);
+        console.log(response.ordPrice);
+      } else {
+        console.log("nothing");
+      }
+    });
+}
+
+function moveCartToLatestOrder(){
+  let itemsStorage = localStorage.getItem("items")
+  ? JSON.parse(localStorage.getItem("items"))
+  : [];
+  localStorage.setItem("latestOrder", JSON.stringify(itemsStorage));
+
+
+}
+
+
+async function successOrderLocal(){
+  const urlParams = new URLSearchParams(window.location.search);
+  const k9sessionId = urlParams.get("session_id");
+  console.log(k9sessionId);
+
+  let recentSId = localStorage.getItem("sesId")
+  ? JSON.parse(localStorage.getItem("sesId"))
+  : "";
+
+  //if a success request of this session id has already been made and stored into memory
+  if(recentSId === k9sessionId){
+    return;
+  }
+
+  if(k9sessionId === null){
+    return;
+  }
+
+  console.log("past if");
+  await fetch(`http://localhost:4000/success?session_id=${k9sessionId}`)
+    .then((response) => response.json())
+    .then((response) => {
+      if (response.custName) {
+        localStorage.setItem("sesId", JSON.stringify(k9sessionId));
+        moveCartToLatestOrder();
+        console.log(response.custName);
+        console.log(response.ordPrice);
+      } else {
+        console.log("nothing");
+      }
+    });
 }
