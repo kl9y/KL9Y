@@ -295,9 +295,9 @@ async function successOrder(){
             return response.json();
               }).then((response) => {
                   if(response.url){
-                  loadingAnimation.style.display = 'block';
-                  localStorage.setItem("orderPlaced", "110");
-                  window.location.assign(response.url);
+                  
+                 
+                  console.log(response.url);
                 }
               });
 }
