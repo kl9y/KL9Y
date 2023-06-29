@@ -263,8 +263,8 @@ function showOrder(){
   let itemsStorage = localStorage.getItem("latestOrder")
   ? JSON.parse(localStorage.getItem("latestOrder"))
   : [];
-  let orderName = localStorage.getItem("orderName");
-  let orderPrice = localStorage.getItem("orderPrice");
+  let orderName = JSON.parse(localStorage.getItem("orderName"));
+  let orderPrice = JSON.parse(localStorage.getItem("orderPrice"));
   document.write(`
     <div> ${orderName} </div>
     <div> ${orderPrice} </div>
