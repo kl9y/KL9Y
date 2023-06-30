@@ -64,17 +64,17 @@
 
 
                 <div class="dropdownSize">
-                    <button id="sizeBtn" class="dropbtn">Select Size</button>
-                    <div class="dropdownSize-content">
-                        <a href="#" onclick="changeSizeSelect('S')">S</a>
-                        <a href="#" onclick="changeSizeSelect('M')">M</a>
-                        <a href="#" onclick="changeSizeSelect('L')">L</a>
-                        <a href="#" onclick="changeSizeSelect('XL')">XL</a>
+                    <button id="sizeBtn" class="dropbtn" onclick="toggleOptions()">Select Size</button>
+                    <div id="sizeDropdown" class="dropdownSize-content">
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('S')">S</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('M')">M</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('L')">L</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('XL')">XL</a>
                     </div>
                 </div>
 
 
-                <button  class="buyNowBtn" onclick="addToCart(productImage.src, 'price_1NNkJZJObEa52vYfhIHWhg0i')">ADD TO CART</button> 
+                <button  class="buyNowBtn" onclick="addToCart(productImage.src)">ADD TO CART</button> 
    
                 <div class="sizeChartDivKlay">
                     <button class= "sizingBtnKlay" id="toggleButton" onclick="sizingChange()">˅ SIZE GUIDE</button>

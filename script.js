@@ -1,7 +1,7 @@
-
 function changeImage(imageURL) {
     document.getElementById("productImage").src = imageURL;
 }
+
 
 function renderNav(){
     document.write(`
@@ -64,16 +64,19 @@ function updateBuyNowLink(newURL, updatedIMG, arrayOfNewIds) {
     var buyNowBtn = document.getElementById('buyNowBtn');
     buyNowBtn.setAttribute('onclick', newURL);
 
+    if(arrayOfNewIds.length == 1){
+      document.getElementById("productIdForCart").innerHTML = arrayOfNewIds[0];
+      changeImage(updatedIMG);
+      return;
+    }
+
     if(arrayOfNewIds.length > 0){
       document.getElementById("pId1").innerText = arrayOfNewIds[0];
       document.getElementById("pId2").innerText =  arrayOfNewIds[1];
       document.getElementById("pId3").innerText =  arrayOfNewIds[2];
       document.getElementById("pId4").innerText =  arrayOfNewIds[3];
       document.getElementById("sizeBtn").innerText = "SELECT SIZE";
-
     }
-    
-
     changeImage(updatedIMG);
   }
 
@@ -81,6 +84,8 @@ function updateBuyNowLink(newURL, updatedIMG, arrayOfNewIds) {
 function changeImageHover(element, imagePath) {
     element.src = imagePath;
   }
+
+
 function sizing(){
     document.write(`
     <div class="sizing-dropdownmenu">
@@ -113,11 +118,18 @@ function sizingChange(){
 }
 
 
-function addToCart(imgUrl, prodId){
+function addToCart(imgUrl){
 
-  if(document.getElementById("sizeBtn").innerHTML === "SELECT SIZE"){
-    return;
+  if(document.getElementById("sizeBtn") !== null){
+    if(document.getElementById("sizeBtn").innerHTML === "SELECT SIZE"){
+      return;
+    }
+    var sizing = document.getElementById("sizeBtn").innerHTML;
   }
+  else{
+    var sizing = "";
+  }
+  
   let itemsStorage = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
@@ -133,30 +145,28 @@ function addToCart(imgUrl, prodId){
     return;
   }
 
-
-
-  itemsStorage.push([imgUrl,prodId,price, itemName]);
+  itemsStorage.push([imgUrl,stripePId,price, itemName,sizing]);
   localStorage.setItem("items", JSON.stringify(itemsStorage));
   location.replace("https://kl9y.com/cart");
 }
 
-function removeFromCart(imgUrl, prodId, price, itemName){
+
+function removeFromCart(imgUrl, prodId, price, itemName, sizing){
   let itemsStorage = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
   
-  const index = itemsStorage.indexOf([imgUrl,prodId,price,itemName]);
-  let tupleIndex = itemsStorage.findIndex((tuple) => JSON.stringify(tuple) === JSON.stringify([imgUrl,prodId,price,itemName]));
+  const index = itemsStorage.indexOf([imgUrl,prodId,price,itemName,sizing]);
+  let tupleIndex = itemsStorage.findIndex((tuple) => JSON.stringify(tuple) === JSON.stringify([imgUrl,prodId,price,itemName,sizing]));
   console.log(tupleIndex);
 
   if (tupleIndex > -1) {
     itemsStorage.splice(tupleIndex, 1);
     localStorage.setItem("items", JSON.stringify(itemsStorage));
-}
-
+  }
     location.reload();
-
 }
+
 
 function showCart(){
   let itemsStorage = localStorage.getItem("items")
@@ -166,13 +176,14 @@ function showCart(){
   itemsStorage.forEach((note) =>{
     document.write(`<div class="cartRow">
     <img class="cartImg" src="${note[0]}">
-    <p class="cartItemName">${note[3]}</p>
+    <p class="cartItemName">${note[3]} ${note[4]}</p>
     <p class="cartPrice">${note[2]}</p>
-    <button class="cartRemoveBtn" onclick="removeFromCart('${note[0]}', '${note[1]}', '${note[2]}', '${note[3]}')">X</button>
+    <button class="cartRemoveBtn" onclick="removeFromCart('${note[0]}', '${note[1]}', '${note[2]}', '${note[3]}', '${note[4]}')">X</button>
 </div>`);
     console.log(note[0]);
   })
 }
+
 
 function totalCart(){
   let itemsStorage = localStorage.getItem("items")
@@ -190,7 +201,6 @@ function totalCart(){
   }
   
 }
-
 
 
 async function emptyReq(stripeIds){
@@ -228,17 +238,15 @@ function makeInitReq(){
     var hoursSince=Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minsSince=Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     if(daysSince > 0 || hoursSince > 0 || minsSince > 20){
-      //make a request
-      //update stored time to current
       emptyReq([]);
       localStorage.setItem("time", JSON.stringify(now));
     }
     else{
       console.log("");
     }
-    
   }
 }
+
 
 async function checkout(){
   let itemsStorage = localStorage.getItem("items")
@@ -251,10 +259,8 @@ async function checkout(){
   )
   if(stripeIds.length > 0){
     let loadingAnimation = document.getElementById('loadingAnimation');
-    loadingAnimation.style.display = 'block'; // Show the loading animation
+    loadingAnimation.style.display = 'block'; 
 
-    console.log('STRIPE REQ');
-    console.log(stripeIds);
     await fetch('https://kl9y.onrender.com/checkout', {
       method: 'POST', 
       headers: {
@@ -273,7 +279,6 @@ async function checkout(){
                   //error occurred making link
                   loadingAnimation.style.display = 'none';
                 }
-              
               });
   }
   else{
@@ -307,7 +312,6 @@ function showOrder(){
 
 
 async function successOrder(){
-  
   const urlParams = new URLSearchParams(window.location.search);
   const k9sessionId = urlParams.get("session_id");
   console.log(k9sessionId);
@@ -340,6 +344,7 @@ async function successOrder(){
     });
 }
 
+
 function moveCartToLatestOrder(){
   let itemsStorage = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
@@ -347,6 +352,7 @@ function moveCartToLatestOrder(){
   localStorage.setItem("latestOrder", JSON.stringify(itemsStorage));
   location.reload();
 }
+
 
 async function successOrderLocal(){
   const urlParams = new URLSearchParams(window.location.search);
@@ -382,10 +388,8 @@ async function successOrderLocal(){
 }
 
 
-
 function changeSizeSelect(sizeLbl){
   const sizeOrder = ["S", "M", "L", "XL"];
-  
   const sizeIndex = sizeOrder.indexOf(sizeLbl);
   console.log(sizeIndex);
   document.getElementById("sizeBtn").innerText = sizeLbl;
@@ -395,12 +399,19 @@ function changeSizeSelect(sizeLbl){
   pIds.push(document.getElementById("pId3").innerHTML);
   pIds.push(document.getElementById("pId4").innerHTML);
   document.getElementById("productIdForCart").innerText = pIds[sizeIndex];
+  var dropdown = document.getElementById("sizeDropdown");
+  dropdown.style.display = "none";
 }
+
 
 function changeRadio(radioId){
   var radioInput = document.getElementById(radioId);
-
   radioInput.checked = true;
   radioInput.dispatchEvent(new Event('change'));
+}
 
+
+function toggleOptions(){
+  var dropdown = document.getElementById("sizeDropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
