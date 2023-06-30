@@ -29,7 +29,32 @@
             <div class="prodDetails">
                 <h1>CHAMPION GRAFFITI CREW NECK</h1>
                 <p class="priceText">$ 55</p>
+
+                <div id="productIdForCart" class="dev"></div>
+                <div id="pId1" class="dev">price_1NOY0sJObEa52vYfUXrYJpMc</div>
+                <div id="pId2" class="dev">price_1NOY13JObEa52vYfTl1h6VCZ</div>
+                <div id="pId3" class="dev">price_1NOY1DJObEa52vYfTNJ6WjlL</div>
+                <div id="pId4" class="dev">price_1NOY1RJObEa52vYfOvWr1LSK</div>
+
                 <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/5kAaHheDo6MP74sbJ2';">BUY NOW</button>
+
+                <div class="dropdownSize">
+                    <button id="sizeBtn" class="dropbtn" onclick="toggleOptions()">Select Size</button>
+                    <div id="sizeDropdown" class="dropdownSize-content">
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('S')">S</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('M')">M</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('L')">L</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('XL')">XL</a>
+                    </div>
+                </div>
+
+
+                <button  class="buyNowBtn" onclick="addToCart(productImage.src)">ADD TO CART</button> 
+   
+                <div class="sizeChartDivKlay">
+                    <button class= "sizingBtnKlay" id="toggleButton" onclick="sizingChange()">˅ SIZE GUIDE</button>
+                    <img class="sizingKlay" src="../imgs/products/champion-graffiti/sizing-chart(crewneck).png">
+                </div>
    
 
                 <p class = "detailText">DETAILS</p>
@@ -38,6 +63,8 @@
                 <p class="detailText">DTG Printed on the front</p>
                 <p class="detailText">Blank on the back</p>
                 <p class="detailText">Champion logo on sleeve</p>
+                <p class="detailText">Ships within 2 weeks</p>
+                <p class="detailText">All sales are final</p>
             </div>
         </div>
        
