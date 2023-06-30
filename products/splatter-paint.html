@@ -24,12 +24,37 @@
 
         <div class="prodMain">
             <div class="prodImg">
-                <img src="../imgs/products/splatter-paint/splatter-paint.jpg" style="width: 100%;">
+                <img id="productImage" src="../imgs/products/splatter-paint/splatter-paint.jpg" style="width: 100%;">
+                
             </div>
             <div class="prodDetails">
                 <h1>SPLATTER PAINT HELMET HOODIE</h1>
                 <p class="priceText">$ 50</p>
+                <div id="productIdForCart" class="dev"></div>
+
+                <div id="pId1" class="dev">price_1NOVJhJObEa52vYfKZti56Oy</div>
+                <div id="pId2" class="dev">price_1NOVJuJObEa52vYf27F3cm9l</div>
+                <div id="pId3" class="dev">price_1NOVK9JObEa52vYfsfAInMeE</div>
+                <div id="pId4" class="dev">price_1NOVKZJObEa52vYfneh883un</div>
+
                 <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/5kAaHh9j48UX2Oc28e';">BUY NOW</button>
+                <div class="dropdownSize">
+                    <button id="sizeBtn" class="dropbtn" onclick="toggleOptions()">Select Size</button>
+                    <div id="sizeDropdown" class="dropdownSize-content">
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('S')">S</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('M')">M</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('L')">L</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('XL')">XL</a>
+                    </div>
+                </div>
+
+
+                <button  class="buyNowBtn" onclick="addToCart(productImage.src)">ADD TO CART</button> 
+   
+                <div class="sizeChartDivKlay">
+                    <button class= "sizingBtnKlay" id="toggleButton" onclick="sizingChange()">˅ SIZE GUIDE</button>
+                    <img class="sizingKlay" src="../imgs/products/graffiti-hoodie/size-guide.png">
+                </div>
    
 
                 <p class = "detailText">DETAILS</p>

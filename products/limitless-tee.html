@@ -26,7 +26,30 @@
             <div class="prodDetails">
                 <h1>LIMITLESS POTENTIAL TEE</h1>
                 <p class="priceText">$ 35</p>
+                <div id="productIdForCart" class="dev"></div>
+                <div id="pId1" class="dev">price_1NOXz4JObEa52vYfpRkbh1b4</div>
+                <div id="pId2" class="dev">price_1NOXzHJObEa52vYf7eWobe7B</div>
+                <div id="pId3" class="dev">price_1NOXzRJObEa52vYfj1ZIPBMB</div>
+                <div id="pId4" class="dev">price_1NOXziJObEa52vYfYtmQ4sm4</div>
                 <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/00gcPpan8c793SgdRb';">BUY NOW</button>
+
+                <div class="dropdownSize">
+                    <button id="sizeBtn" class="dropbtn" onclick="toggleOptions()">Select Size</button>
+                    <div id="sizeDropdown" class="dropdownSize-content">
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('S')">S</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('M')">M</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('L')">L</a>
+                        <a href="#sizeDropdown" onclick="changeSizeSelect('XL')">XL</a>
+                    </div>
+                </div>
+
+
+                <button  class="buyNowBtn" onclick="addToCart(productImage.src)">ADD TO CART</button> 
+   
+                <div class="sizeChartDivKlay">
+                    <button class= "sizingBtnKlay" id="toggleButton" onclick="sizingChange()">˅ SIZE GUIDE</button>
+                    <img class="sizingKlay" src="../imgs/products/graffiti-hoodie/size-guide.png">
+                </div>
 
                 <p class = "detailText">DETAILS</p>
                 <p class="detailText">100% cotton</p>
