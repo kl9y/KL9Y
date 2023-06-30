@@ -11,40 +11,42 @@
         <link rel="stylesheet" href="../styles.css">
     </head>
     <body>
+        <script src ="../script.js"></script>
+        <div class="cartContainer">
+            <a href="https://kl9y.com/cart"><img class="cart" src="../assets/cart.png"></a> 
+            <script>totalCart()</script>
+        </div>
         <div class="logoHolder">
             <a href="https://kl9y.com"><img class="kl9yLogo" src="../imgs/9yOFFICIALSmaller.png"></a>
         </div>
         
-        <script src="../script.js"></script>
         <script>renderNav();</script>
-
-
-
-
 
         <div class="prodMain">
             <div class="prodImg">
                 <img  id="productImage" src="../imgs/products/vintage-black/vintage-black-irl2.jpg" style="width: 100%;">
                 <div class="imageThumbnails">
-                    <img class="thumbnails" src="../imgs/products/vintage-black/vintage-black-irl2.jpg" onclick="changeImage('../imgs/products/vintage-black/vintage-black-irl2.jpg')">
-                    <img class="thumbnails" src="../imgs/products/vintage-black/vintage-black.jpg" onclick="changeImage('../imgs/products/vintage-black/vintage-black.jpg')">
-                    <img class="thumbnails" src="../imgs/products/vintage-purple/vintage-purple.jpg" onclick="changeImage('../imgs/products/vintage-purple/vintage-purple.jpg')">
+                    <img class="thumbnails" src="../imgs/products/vintage-black/vintage-black-irl2.jpg" onclick="changeRadio('colorBlack'); changeImage('../imgs/products/vintage-black/vintage-black-irl2.jpg')">
+                    <img class="thumbnails" src="../imgs/products/vintage-black/vintage-black.jpg" onclick="changeRadio('colorBlack')">
+                    <img class="thumbnails" src="../imgs/products/vintage-purple/vintage-purple.jpg" onclick="changeRadio('colorPurple')">
                 </div>
             </div>
             <div class="prodDetails">
                 <h1>VINTAGE WASH HOODIE</h1>
                 <p class="priceText">$ 40</p>
+                <div id="productIdForCart" class="dev"></div>
                 <div class="colorOptions">
-                    <input type="radio" id="colorBlack" name="color" value="black" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/00g6r1eDoefhdsQ004';`, '../imgs/products/vintage-black/vintage-black.jpg')" checked>
+                    <input type="radio" id="colorBlack" name="color" value="black" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/00g6r1eDoefhdsQ004';`, '../imgs/products/vintage-black/vintage-black.jpg', ['price_1NB7d9JObEa52vYf19e1ULCO'])" checked>
                     <label for="colorBlack">Black</label>
                     
-                    <input type="radio" id="colorPurple" name="color" value="purple" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/3cs9Ddan82wz4WkfZ6';` ,'../imgs/products/vintage-purple/vintage-purple.jpg' )">
+                    <input type="radio" id="colorPurple" name="color" value="purple" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/3cs9Ddan82wz4WkfZ6';` ,'../imgs/products/vintage-purple/vintage-purple.jpg', ['price_1NFApZJObEa52vYfbX1o7KmM'] )">
                     <label for="colorPurple">Purple</label>
                 </div>
                 <button id="buyNowBtn" class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/00g6r1eDoefhdsQ004';">BUY NOW</button>
    
                 
 
+                <p class = "detailText">USA only</p>
                 <p class = "detailText">DETAILS</p>
                 <p class="detailText">100% cotton</p>
                 <p class="detailText">8.25 oz fleece</p>

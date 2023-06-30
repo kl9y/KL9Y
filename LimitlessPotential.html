@@ -11,88 +11,92 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <script src ="script.js"></script>
+        <div class="cartContainer">
+            <a href="https://kl9y.com/cart"><img class="cart" src="assets/cart.png"></a> 
+            <script>totalCart()</script>
+        </div>
         <div class="logoHolder">
             <a href="https://kl9y.com"><img class="kl9yLogo" src="imgs/9yOFFICIALSmaller.png"></a>
         </div>
 
-        <script src="script.js"></script>
         <script>renderNav();</script>
 
-         <div class="productLines">
-                <a class="imgA" href="https://kl9y.com/products/9-of-hearts"> 
-                <img class="prod" src ="imgs/products/9-of-hearts/9ofhearts.png" >
-                    <p class="listingName">9 OF HEARTS</p>
-                    <p class="listingName">HOODIE</p>
-                    <p class="listingName">$50</p>
-                </a>
-            <a class="imgA" href="https://kl9y.com/products/splatter-paint"> <img class="prod" src ="imgs/products/splatter-paint/splatter-paint.jpg">
-                <p class="listingName">SPLATTER PAINT</p>
-                <p class="listingName">HELMET HOODIE</p>
-                <p class="listingName">$50</p></a>
-            
-            
-            <a class="imgA" href="https://kl9y.com/products/9y-hoodie"> 
-                <img class="prod" src ="imgs/products/9y-hoodie/KL9YHoodieBlackBack.jpg" onmouseover="changeImageHover(this, 'imgs/products/9y-hoodie/KL9YHoodieBlackFront.jpg')" onmouseout="changeImageHover(this, 'imgs/products/9y-hoodie/KL9YHoodieBlackBack.jpg')">
-                <p class="listingName">9Y LOGO</p>
+        <div class="productLines">
+            <a class="imgA" href="https://kl9y.com/products/9-of-hearts"> 
+            <img class="prod" src ="imgs/products/9-of-hearts/9ofhearts.png" >
+                <p class="listingName">9 OF HEARTS</p>
                 <p class="listingName">HOODIE</p>
-                <p class="listingName">$55</p>
+                <p class="listingName">$50</p>
             </a>
+        <a class="imgA" href="https://kl9y.com/products/splatter-paint"> <img class="prod" src ="imgs/products/splatter-paint/splatter-paint.jpg">
+            <p class="listingName">SPLATTER PAINT</p>
+            <p class="listingName">HELMET HOODIE</p>
+            <p class="listingName">$50</p></a>
+        
+        
+        <a class="imgA" href="https://kl9y.com/products/9y-hoodie"> 
+            <img class="prod" src ="imgs/products/9y-hoodie/KL9YHoodieBlackBack.jpg" onmouseover="changeImageHover(this, 'imgs/products/9y-hoodie/KL9YHoodieBlackFront.jpg')" onmouseout="changeImageHover(this, 'imgs/products/9y-hoodie/KL9YHoodieBlackBack.jpg')">
+            <p class="listingName">9Y LOGO</p>
+            <p class="listingName">HOODIE</p>
+            <p class="listingName">$55</p>
+        </a>
 
-            <a class="imgA" href="https://kl9y.com/products/limitless-tee"> <img class="prod" src ="imgs/products/limitless-tee/LimitlessT.jpg">
-                <p class="listingName">LIMITLESS</p>
-                <p class="listingName">TEE</p>
-                <p class="listingName">$35</p></a>
-        </div>
+        <a class="imgA" href="https://kl9y.com/products/limitless-tee"> <img class="prod" src ="imgs/products/limitless-tee/LimitlessT.jpg">
+            <p class="listingName">LIMITLESS</p>
+            <p class="listingName">TEE</p>
+            <p class="listingName">$35</p></a>
+    </div>
 
-        <div class="productLines">
-            
-            <a class="imgA" href="https://kl9y.com/products/hat"> 
-                <img class="prod" src ="imgs/products/hat/9YHatWhite.png" onmouseover="changeImageHover(this, 'imgs/products/hat/TruckerHatBlack.jpg')" onmouseout="changeImageHover(this, 'imgs/products/hat/9YHatWhite.png')">
-                <p class="listingName">9Y LOGO</p>
-                <p class="listingName">HAT</p>
-                <p class="listingName">$30</p></a>
-            <a class="imgA" href="https://kl9y.com/products/graffiti-hoodie"> 
-                <img class="prod" src ="imgs/products/graffiti-hoodie/WhiteGraffiti.jpg" onmouseover="changeImageHover(this, 'imgs/products/graffiti-hoodie/BlackGraffiti.jpg')" onmouseout="changeImageHover(this, 'imgs/products/graffiti-hoodie/WhiteGraffiti.jpg')">
-                <p class="listingName">GRAFFITI</p>
-                <p class="listingName">HOODIE</p>
-                <p class="listingName">$50</p></a>
-            <a class="imgA" href="https://kl9y.com/products/champion-graffiti"> <img class="prod" src ="imgs/products/champion-graffiti/KL9YGraffitiLimitlessPotential.jpg">
-                <p class="listingName">CHAMPION GRAFFITI</p>
-                <p class="listingName">CREW NECK</p>
-                <p class="listingName">$55</p></a>
-            <a class="imgA" href="https://kl9y.com/products/pants"> <img class="prod" src ="imgs/products/pants/LimitlessPotentialPants.jpg">
-                <p class="listingName">LIMITLESS</p>
-                <p class="listingName">PANTS</p>
-                <p class="listingName">$65</p></a>
-            
-        </div>
+    <div class="productLines">
+        
+        <a class="imgA" href="https://kl9y.com/products/hat"> 
+            <img class="prod" src ="imgs/products/hat/9YHatWhite.png" onmouseover="changeImageHover(this, 'imgs/products/hat/TruckerHatBlack.jpg')" onmouseout="changeImageHover(this, 'imgs/products/hat/9YHatWhite.png')">
+            <p class="listingName">9Y LOGO</p>
+            <p class="listingName">HAT</p>
+            <p class="listingName">$30</p></a>
+        <a class="imgA" href="https://kl9y.com/products/graffiti-hoodie"> 
+            <img class="prod" src ="imgs/products/graffiti-hoodie/WhiteGraffiti.jpg" onmouseover="changeImageHover(this, 'imgs/products/graffiti-hoodie/BlackGraffiti.jpg')" onmouseout="changeImageHover(this, 'imgs/products/graffiti-hoodie/WhiteGraffiti.jpg')">
+            <p class="listingName">GRAFFITI</p>
+            <p class="listingName">HOODIE</p>
+            <p class="listingName">$50</p></a>
+        <a class="imgA" href="https://kl9y.com/products/champion-graffiti"> <img class="prod" src ="imgs/products/champion-graffiti/KL9YGraffitiLimitlessPotential.jpg">
+            <p class="listingName">CHAMPION GRAFFITI</p>
+            <p class="listingName">CREW NECK</p>
+            <p class="listingName">$55</p></a>
+        <a class="imgA" href="https://kl9y.com/products/pants"> <img class="prod" src ="imgs/products/pants/LimitlessPotentialPants.jpg">
+            <p class="listingName">LIMITLESS</p>
+            <p class="listingName">PANTS</p>
+            <p class="listingName">$65</p></a>
+        
+    </div>
 
-        <div class="productLines">
+    <div class="productLines">
 
-            <a class="imgA" href="https://kl9y.com/products/mousepad"> <img class="prod" src ="imgs/products/mousepad/ledmousepad.png">
-                <p class="listingName">LED GAMING</p>
-                <p class="listingName">MOUSEPAD</p>
-                <p class="listingName">$40</p></a>
-            
-            <a class="imgA" href="https://kl9y.com/products/vintage-black"> 
-                <img class="prod" src ="imgs/products/vintage-black/vintage-black.jpg" onmouseover="changeImageHover(this, 'imgs/products/vintage-purple/vintage-purple.jpg')" onmouseout="changeImageHover(this, 'imgs/products/vintage-black/vintage-black.jpg')">
-                <p class="listingName">VINTAGE WASH</p>
-                <p class="listingName">HOODIE</p>
-                <p class="listingName">$40</p></a>
-            
-            <a class="imgA" > <img class="prod" src ="">
-                <p class="listingName"></p>
-                <p class="listingName"></p>
-                <p class="listingName"></p></a>
-            <a class="imgA" href=""> <img class="prod" src ="">
-                <p class="listingName"></p>
-                <p class="listingName"></p>
-                <p class="listingName"></p></a>
-        </div>
+        <a class="imgA" href="https://kl9y.com/products/mousepad"> <img class="prod" src ="imgs/products/mousepad/ledmousepad.png">
+            <p class="listingName">LED GAMING</p>
+            <p class="listingName">MOUSEPAD</p>
+            <p class="listingName">$40</p></a>
+        
+        <a class="imgA" href="https://kl9y.com/products/vintage-wash"> 
+            <img class="prod" src ="imgs/products/vintage-black/vintage-black.jpg" onmouseover="changeImageHover(this, 'imgs/products/vintage-purple/vintage-purple.jpg')" onmouseout="changeImageHover(this, 'imgs/products/vintage-black/vintage-black.jpg')">
+            <p class="listingName">VINTAGE WASH</p>
+            <p class="listingName">HOODIE</p>
+            <p class="listingName">$40</p></a>
+        
+        <a class="imgA" > <img class="prod" src ="">
+            <p class="listingName"></p>
+            <p class="listingName"></p>
+            <p class="listingName"></p></a>
+        <a class="imgA" href=""> <img class="prod" src ="">
+            <p class="listingName"></p>
+            <p class="listingName"></p>
+            <p class="listingName"></p></a>
+    </div>
 
 
 
-        <div style="margin-bottom: 50rem;"></div>
+    <div style="margin-bottom: 50rem;"></div>
 
     
     </body>
