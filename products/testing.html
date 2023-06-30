@@ -37,25 +37,32 @@
             <div class="prodDetails">
                 <h1>GRAFFITI HOODIE</h1>
                 <p class="priceText">$ 55</p>
-                
+
+                <div id="productIdForCart" style="display: none;"></div>
+                <div id="pId1">price_1NOY0sJObEa52vYfUXrYJpMc</div>
+                <div id="pId2">price_1NOY13JObEa52vYfTl1h6VCZ</div>
+                <div id="pId3">price_1NOY1DJObEa52vYfTNJ6WjlL</div>
+                <div id="pId4">price_1NOY1RJObEa52vYfOvWr1LSK</div>
+
                 <button id="buyNowBtn" class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/cN23eP7aW0oragEbIV';">BUY NOW</button>
 
                 <div class="dropdownSize">
-                    <button class="dropbtn">Select Size</button>
+                    <button id="sizeBtn" class="dropbtn">Select Size</button>
                     <div class="dropdownSize-content">
-                        <a href="#" onclick="">S</a>
-                        <a href="#" onclick="">M</a>
-                        <a href="#" onclick="">L</a>
-                        <a href="#" onclick="">XL</a>
+                        <a href="#" onclick="changeSizeSelect('S', ['price_1NOY0sJObEa52vYfUXrYJpMc','price_1NOY13JObEa52vYfTl1h6VCZ','price_1NOY1DJObEa52vYfTNJ6WjlL','price_1NOY1RJObEa52vYfOvWr1LSK'])">S</a>
+                        <a href="#" onclick="changeSizeSelect('M', ['price_1NOY0sJObEa52vYfUXrYJpMc','price_1NOY13JObEa52vYfTl1h6VCZ','price_1NOY1DJObEa52vYfTNJ6WjlL','price_1NOY1RJObEa52vYfOvWr1LSK'])">M</a>
+                        <a href="#" onclick="changeSizeSelect('L', ['price_1NOY0sJObEa52vYfUXrYJpMc','price_1NOY13JObEa52vYfTl1h6VCZ','price_1NOY1DJObEa52vYfTNJ6WjlL','price_1NOY1RJObEa52vYfOvWr1LSK'])">L</a>
+                        <a href="#" onclick="changeSizeSelect('XL', ['price_1NOY0sJObEa52vYfUXrYJpMc','price_1NOY13JObEa52vYfTl1h6VCZ','price_1NOY1DJObEa52vYfTNJ6WjlL','price_1NOY1RJObEa52vYfOvWr1LSK'])">XL</a>
                     </div>
                 </div>
 
 
-                <button id="buyNowBtn" class="buyNowBtn" onclick="addToCart(productImage.src, 'price_1NNkJZJObEa52vYfhIHWhg0i')">ADD TO CART</button> 
+                <button  class="buyNowBtn" onclick="addToCart(productImage.src, 'price_1NNkJZJObEa52vYfhIHWhg0i')">ADD TO CART</button> 
    
                 <div class="sizeChartDivKlay">
                     <button class= "sizingBtnKlay" id="toggleButton" onclick="sizingChange()">˅ SIZE GUIDE</button>
                     <img class="sizingKlay" src="../imgs/products/graffiti-hoodie/size-guide.png">
+                </div>
 
                 <p class = "detailText">DETAILS</p>
                 <p class="detailText">50% cotton, 50% polyester</p>

@@ -59,9 +59,21 @@ function renderNav(){
 }
 
 
-function updateBuyNowLink(newURL, updatedIMG) {
+function updateBuyNowLink(newURL, updatedIMG, arrayOfNewIds) {
+  document.getElementById("productIdForCart").innerHTML = " ";
     var buyNowBtn = document.getElementById('buyNowBtn');
     buyNowBtn.setAttribute('onclick', newURL);
+
+    if(arrayOfNewIds.length > 0){
+      document.getElementById("pId1").innerText = arrayOfNewIds[0];
+      document.getElementById("pId2").innerText =  arrayOfNewIds[1];
+      document.getElementById("pId3").innerText =  arrayOfNewIds[2];
+      document.getElementById("pId4").innerText =  arrayOfNewIds[3];
+      document.getElementById("sizeBtn").innerText = "SELECT SIZE";
+
+    }
+    
+
     changeImage(updatedIMG);
   }
 
@@ -102,6 +114,10 @@ function sizingChange(){
 
 
 function addToCart(imgUrl, prodId){
+
+  if(document.getElementById("sizeBtn").innerHTML === "SELECT SIZE"){
+    return;
+  }
   let itemsStorage = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
@@ -110,6 +126,13 @@ function addToCart(imgUrl, prodId){
 
   var h1Tag = document.querySelector('h1'); 
   var itemName = h1Tag.textContent.trim();
+
+  var stripePId = document.getElementById("productIdForCart").innerHTML;
+  console.log(stripePId.length);
+  if(stripePId.length < 10 || typeof stripePId === "undefined"){
+    return;
+  }
+
 
 
   itemsStorage.push([imgUrl,prodId,price, itemName]);
@@ -356,4 +379,28 @@ async function successOrderLocal(){
         console.log("nothing");
       }
     });
+}
+
+
+
+function changeSizeSelect(sizeLbl){
+  const sizeOrder = ["S", "M", "L", "XL"];
+  
+  const sizeIndex = sizeOrder.indexOf(sizeLbl);
+  console.log(sizeIndex);
+  document.getElementById("sizeBtn").innerText = sizeLbl;
+  let pIds = [];
+  pIds.push(document.getElementById("pId1").innerHTML);
+  pIds.push(document.getElementById("pId2").innerHTML);
+  pIds.push(document.getElementById("pId3").innerHTML);
+  pIds.push(document.getElementById("pId4").innerHTML);
+  document.getElementById("productIdForCart").innerText = pIds[sizeIndex];
+}
+
+function changeRadio(radioId){
+  var radioInput = document.getElementById(radioId);
+
+  radioInput.checked = true;
+  radioInput.dispatchEvent(new Event('change'));
+
 }
