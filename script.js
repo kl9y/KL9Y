@@ -297,16 +297,21 @@ function showOrder(){
   : [];
   let orderName = JSON.parse(localStorage.getItem("orderName"));
   let orderPrice = JSON.parse(localStorage.getItem("orderPrice"));
+  let priceNum = parseInt(orderPrice) /100;
+  if(orderName === null){
+    return;
+  }
   document.write(`
-    <div> ${orderName} </div>
-    <div> ${orderPrice} </div>
+    <h1 class="cartLabel">THANK YOU</h1>
+    <h1 class="cartLabel"> ${orderName} </h1>
+    <h1 class="cartLabel2">YOUR ORDER TOTAL: $${priceNum}</h1>
   `);
 
   itemsStorage.forEach((note) =>{
     document.write(`
     <div class="cartRow">
     <img class="cartImg" src="${note[0]}">
-    <p class="cartItemName">${note[3]}</p>
+    <p class="cartItemName">${note[3]} ${note[4]}</p>
     <p class="cartPrice">${note[2]}</p>
     
 </div>`);

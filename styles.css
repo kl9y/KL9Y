@@ -14,6 +14,10 @@ body{
 .cartLabel{
   margin: auto;
 }
+.cartLabel2{
+  margin: auto;
+  color: #ce6ee9;
+}
 .videoDiv{
     text-align: center; 
     align-items: center; 
