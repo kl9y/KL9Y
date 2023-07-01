@@ -179,7 +179,7 @@ function showCart(){
 
   itemsStorage.forEach((note) =>{
     document.write(`<div class="cartRow">
-    <img class="cartImg" src="${note[0]}">
+    <img alt="product image" class="cartImg" src="${note[0]}">
     <p class="cartItemName">${note[3]} ${note[4]}</p>
     <p class="cartPrice">${note[2]}</p>
     <button class="cartRemoveBtn" onclick="removeFromCart('${note[0]}', '${note[1]}', '${note[2]}', '${note[3]}', '${note[4]}')">X</button>
@@ -310,7 +310,7 @@ function showOrder(){
   itemsStorage.forEach((note) =>{
     document.write(`
     <div class="cartRow">
-    <img class="cartImg" src="${note[0]}">
+    <img alt="product image" class="cartImg" src="${note[0]}">
     <p class="cartItemName">${note[3]} ${note[4]}</p>
     <p class="cartPrice">${note[2]}</p>
     
