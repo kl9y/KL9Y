@@ -4,40 +4,62 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Limitless Tee</title>
+        <title>Graffiti Tee</title>
         <link rel="icon" type="image/x-icon" href="../imgs/favicon.png">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../styles.css">
     </head>
+    
     <body>
         <script src ="../script.js"></script>
         <div class="cartContainer">
             <a href="https://kl9y.com/cart"><img alt="cart" class="cart" src="../assets/cart.png"></a> 
             <script>totalCart()</script>
         </div>
+
         <div class="logoHolder">
             <a href="https://kl9y.com"><img alt="KL9Y Logo" class="kl9yLogo" src="../imgs/9yOFFICIALSmaller.png"></a>
         </div>
-
-      
+        
+        
         <script>renderNav();</script>
 
         <div class="prodMain">
             <div class="prodImg">
-                <img alt="product image" id="productImage" src="../imgs/products/limitless-tee/LimitlessT.jpg" style="width: 100%;">
-                
+                <img alt="product image" id="productImage" src="../imgs/products/graffiti-tee/black-graffiti-tee.jpg" style="width: 100%;">
+                <div class="imageThumbnails">
+                    <img alt="thumbnail image" class="thumbnails" src="../imgs/products/graffiti-tee/black-graffiti-tee.jpg" onclick="changeRadio('colorBlack')">
+                    <img alt="thumbnail image" class="thumbnails" src="../imgs/products/graffiti-tee/white-graffiti-tee.jpg" onclick="changeRadio('colorWhite')">
+                  </div>
             </div>
             <div class="prodDetails">
-                <h1>LIMITLESS POTENTIAL TEE</h1>
-                <p class="priceText">$ 35</p>
-                <div id="productIdForCart" class="dev"></div>
-                <div id="pId1" class="dev">price_1NOXz4JObEa52vYfpRkbh1b4</div>
-                <div id="pId2" class="dev">price_1NOXzHJObEa52vYf7eWobe7B</div>
-                <div id="pId3" class="dev">price_1NOXzRJObEa52vYfj1ZIPBMB</div>
-                <div id="pId4" class="dev">price_1NOXziJObEa52vYfYtmQ4sm4</div>
-                <button class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/00gcPpan8c793SgdRb';">BUY NOW</button>
+                <h1>GRAFFITI TEE</h1>
+                <p class="priceText">$ 30</p>
 
+                <div id="productIdForCart" class="dev"></div>
+                <div id="pId1" class="dev">price_1NPAF1JObEa52vYfvvQiiWmP</div>
+                <div id="pId2" class="dev">price_1NPAFDJObEa52vYfMTGGioOs</div>
+                <div id="pId3" class="dev">price_1NPAFOJObEa52vYf8QUck8h1</div>
+                <div id="pId4" class="dev">price_1NPAFbJObEa52vYfe3y8DKT7</div>
+
+                <div class="colorOptions">
+
+                    <input type="radio" id="colorBlack" name="color" value="black" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/bIY9Ddcvgfjl3SgdRd';`, '../imgs/products/graffiti-tee/black-graffiti-tee.jpg',
+                    ['price_1NPAF1JObEa52vYfvvQiiWmP','price_1NPAFDJObEa52vYfMTGGioOs','price_1NPAFOJObEa52vYf8QUck8h1','price_1NPAFbJObEa52vYfe3y8DKT7']
+                    )" checked>
+                    <label for="colorBlack">Black</label>
+
+                    <input type="radio" id="colorWhite" name="color" value="white" onchange="updateBuyNowLink(`window.location.href='https://buy.stripe.com/cN24iTan82wzbkI14s';` ,'../imgs/products/graffiti-tee/white-graffiti-tee.jpg',
+                    ['price_1NPAHdJObEa52vYfG1LiB5rJ','price_1NPAIYJObEa52vYfbfh0Jtcm','price_1NPAIkJObEa52vYfxpcQoGhQ','price_1NPAJ1JObEa52vYfkBYwEwVs']
+                    )" >
+                    <label for="colorWhite">White</label>
+
+                    
+                    
+                    
+                </div>
+                <button id="buyNowBtn" class="buyNowBtn" onclick="window.location.href='https://buy.stripe.com/bIY9Ddcvgfjl3SgdRd';">BUY NOW</button>
                 <div class="dropdownSize">
                     <button id="sizeBtn" class="dropbtn" onclick="toggleOptions()">Select Size</button>
                     <div id="sizeDropdown" class="dropdownSize-content">
@@ -55,18 +77,13 @@
                     <button class= "sizingBtnKlay" id="toggleButton" onclick="sizingChange()">˅ SIZE GUIDE</button>
                     <img alt="sizing guide" class="sizingKlay" src="../imgs/products/graffiti-tee/sizing.png">
                 </div>
-
                 <p class = "detailText">DETAILS</p>
                 <p class="detailText">100% cotton</p>
                 <p class="detailText">DTG printed on the front</p>
                 <p class="detailText">Blank on the back</p>
                 <p class="detailText">Ships within 2 weeks</p>
                 <p class="detailText">All sales are final</p>
-                
             </div>
         </div>
-       
-        
-        <script src ="../script.js"></script>
     </body>
 </html>
