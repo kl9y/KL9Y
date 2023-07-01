@@ -35,7 +35,7 @@ function renderNav(){
                 <a class="navElem">|</a>
             </li>
             <li class="dropdown1">
-                <a class="navElem">New Releases</a>
+                <a href="https://kl9y.com/LimitlessPotential" class="navElem">New Releases</a>
                 <div class="dropdown-content">
                     <a href="https://kl9y.com/LimitlessPotential">Limitless Potential</a>
                 </div>
@@ -119,9 +119,11 @@ function sizingChange(){
 
 
 function addToCart(imgUrl){
+  console.log('cart');
 
   if(document.getElementById("sizeBtn") !== null){
     if(document.getElementById("sizeBtn").innerHTML === "SELECT SIZE"){
+      alert("Select a size");
       return;
     }
     var sizing = document.getElementById("sizeBtn").innerHTML;
@@ -142,6 +144,8 @@ function addToCart(imgUrl){
   var stripePId = document.getElementById("productIdForCart").innerHTML;
   console.log(stripePId.length);
   if(stripePId.length < 10 || typeof stripePId === "undefined"){
+    console.log("here");
+    alert("Select a size");
     return;
   }
 
