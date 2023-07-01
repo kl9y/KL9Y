@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -14,41 +11,99 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <div class="videoDiv">
-
-            <video autoplay muted playsinline defaultMuted loop id="myVideo" style="width: 110%; overflow: hidden;">
-                <source src="imgs/WebVidBGLogo.mp4" type="video/mp4">
-            </video>
-            
+        <script src="script.js"></script>
+        <script>makeInitReq()</script>
+        
+        <div class="cartContainer">
+            <a href="https://kl9y.com/cart"><img alt="cart" class="cart" src="./assets/cart.png"></a> 
+            <script>totalCart()</script>
         </div>
         
-        <p class="cSoon" id="demo">COMING SOON</p>
-       
-          <div class="discDiv">
-        
-            <form style=" padding-top: 4%; padding-bottom: 4%; border-radius: 10px; " action="https://getform.io/f/a098f6a4-9b56-49e4-a0df-768bcc53f732" method="POST">
-            <p class="disc">UNLOCK DISCOUNTS AND GET NOTIFIED OF RELEASES</p>
-            <div >
-                <input style="border-style: solid; border-width: 1px; border-color: black; font-size: 20px; width: 40%; height: 30px; margin-bottom: 1%;" type="email" name="email" placeholder="Email" required>
-           </div>
-            <!-- add hidden Honeypot input to prevent spams -->
-            <input type="hidden" name="_gotcha" style="display:none !important">
-            <!-- select field handle -->
-            <button style="border-style: solid; border-width: 1px; border-color: black; font-size: 20px; width: 40%;height: 30px; text-align: center; align-items: center; color: black; background-color: purple; margin: auto;" type="submit">Submit</button>
-        </form>
-        <p style="color: white; font-size: 10px;">By submitting this form and signing up for emails, you consent to receive marketing emails (e.g. promos, releases) from KL9Y at the email provided. Consent is not a condition of purchase. Unsubscribe at any time by clicking the unsubscribe link (where available).</p>
-        <a style="color: white;" href="https://kl9y.com/privacy">Privacy Policy</a>
-    </div>
-    <div style="margin-bottom: 20%;"></div>
+        <div class="videoContainer">
+             <video autoplay muted playsinline defaultMuted loop id="myVideo" style="width: 100%; overflow: hidden;">
+                 <source src="imgs/WebVidBGLogo.mp4" type="video/mp4">
+             </video>
+         </div>
+         
+         <script>renderNav();</script>
+
+        <div class="productLines">
+                <a class="imgA" href="https://kl9y.com/products/9-of-hearts"> 
+                <img alt="9 of hearts hoodie" class="prod" src ="imgs/products/9-of-hearts/9ofhearts.png" >
+                    <p class="listingName">9 OF HEARTS</p>
+                    <p class="listingName">HOODIE</p>
+                    <p class="listingName">$50</p>
+                </a>
+            <a class="imgA" href="https://kl9y.com/products/graffiti-tee"> 
+                <img alt="graffitit tee" class="prod" src ="imgs/products/graffiti-tee/black-graffiti-tee.jpg" onmouseover="changeImageHover(this, 'imgs/products/graffiti-tee/white-graffiti-tee.jpg')" onmouseout="changeImageHover(this, 'imgs/products/graffiti-tee/black-graffiti-tee.jpg')">
+                <p class="listingName">GRAFFITI</p>
+                <p class="listingName">TEE</p>
+                <p class="listingName">$30</p></a>
+            
+            
+            <a class="imgA" href="https://kl9y.com/products/9y-hoodie"> 
+                <img alt="9Y logo hoodie" class="prod" src ="imgs/products/9y-hoodie/KL9YHoodieBlackBack.jpg" onmouseover="changeImageHover(this, 'imgs/products/9y-hoodie/KL9YHoodieBlackFront.jpg')" onmouseout="changeImageHover(this, 'imgs/products/9y-hoodie/KL9YHoodieBlackBack.jpg')">
+                <p class="listingName">9Y LOGO</p>
+                <p class="listingName">HOODIE</p>
+                <p class="listingName">$55</p>
+            </a>
+
+            <a class="imgA" href="https://kl9y.com/products/limitless-tee"> <img alt="limitless potential tee" class="prod" src ="imgs/products/limitless-tee/LimitlessT.jpg">
+                <p class="listingName">LIMITLESS</p>
+                <p class="listingName">TEE</p>
+                <p class="listingName">$35</p></a>
+        </div>
+
+        <div class="productLines">
+            
+            <a class="imgA" href="https://kl9y.com/products/hat"> 
+                <img alt="9Y logo hat" class="prod" src ="imgs/products/hat/9YHatWhite.png" onmouseover="changeImageHover(this, 'imgs/products/hat/TruckerHatBlack.jpg')" onmouseout="changeImageHover(this, 'imgs/products/hat/9YHatWhite.png')">
+                <p class="listingName">9Y LOGO</p>
+                <p class="listingName">HAT</p>
+                <p class="listingName">$30</p></a>
+            <a class="imgA" href="https://kl9y.com/products/graffiti-hoodie"> 
+                <img alt="graffiti 9Y logo hoodie" class="prod" src ="imgs/products/graffiti-hoodie/WhiteGraffiti.jpg" onmouseover="changeImageHover(this, 'imgs/products/graffiti-hoodie/BlackGraffiti.jpg')" onmouseout="changeImageHover(this, 'imgs/products/graffiti-hoodie/WhiteGraffiti.jpg')">
+                <p class="listingName">GRAFFITI</p>
+                <p class="listingName">HOODIE</p>
+                <p class="listingName">$50</p></a>
+            <a class="imgA" href="https://kl9y.com/products/champion-graffiti"> <img alt="champion graffiti hoodie" class="prod" src ="imgs/products/champion-graffiti/KL9YGraffitiLimitlessPotential.jpg">
+                <p class="listingName">CHAMPION GRAFFITI</p>
+                <p class="listingName">CREW NECK</p>
+                <p class="listingName">$55</p></a>
+            <a class="imgA" href="https://kl9y.com/products/pants"> <img alt="limitless potential pants" class="prod" src ="imgs/products/pants/LimitlessPotentialPants.jpg">
+                <p class="listingName">LIMITLESS</p>
+                <p class="listingName">PANTS</p>
+                <p class="listingName">$65</p></a>
+            
+        </div>
+
+        <div class="productLines">
+
+            <a class="imgA" href="https://kl9y.com/products/mousepad"> <img alt="mousepad" class="prod" src ="imgs/products/mousepad/ledmousepad.png">
+                <p class="listingName">LED GAMING</p>
+                <p class="listingName">MOUSEPAD</p>
+                <p class="listingName">$40</p></a>
+            
+            <a class="imgA" href="https://kl9y.com/products/vintage-wash"> 
+                <img alt="vintage wash hoodie" class="prod" src ="imgs/products/vintage-black/vintage-black.jpg" onmouseover="changeImageHover(this, 'imgs/products/vintage-purple/vintage-purple.jpg')" onmouseout="changeImageHover(this, 'imgs/products/vintage-black/vintage-black.jpg')">
+                <p class="listingName">VINTAGE WASH</p>
+                <p class="listingName">HOODIE</p>
+                <p class="listingName">$40</p></a>
+            
+                <a class="imgA" href="https://kl9y.com/products/splatter-paint"> <img alt="splatter paint helmet hoodie" class="prod" src ="imgs/products/splatter-paint/splatter-paint.jpg">
+                    <p class="listingName">SPLATTER PAINT</p>
+                    <p class="listingName">HELMET HOODIE</p>
+                    <p class="listingName">$50</p></a>
+            <a class="imgA"> <img alt="blank" class="prod" src ="imgs/blank.png">
+                <p class="listingName"></p>
+                <p class="listingName"></p>
+                <p class="listingName"></p></a>
+        </div>
 
 
-       <!-- <img style="max-height: 400px;" class="prod" src ="imgs/hoodie1/unisex-premium-hoodie-black-back-63f6f197a92e0.png">-->
 
-        <script src="timer.js"></script>
+        <div style="margin-bottom: 50rem;"></div>
+
         
     </body>
 </html>
