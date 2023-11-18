@@ -251,8 +251,12 @@ function makeInitReq(){
   }
 }
 
+function checkout(){
+  alert("Please use buy now buttons instead. SORRY");
+}
 
-async function checkout(){
+
+async function checkout2(){
   let itemsStorage = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
