@@ -2,6 +2,10 @@ function changeImage(imageURL) {
     document.getElementById("productImage").src = imageURL;
 }
 
+function changeImage2(imageURL) {
+  document.getElementById("productImage").src = imageURL.src;
+}
+
 
 function renderNav(){
     document.write(`
@@ -17,7 +21,7 @@ function renderNav(){
           </div>  
         <div class="menu-items">
           <li><a href="https://kl9y.com/">Home</a></li>
-          <li><a href="https://kl9y.com/LimitlessPotential">New Releases</a></li>
+          <li><a href="https://kl9y.com/June24">New Releases</a></li>
           <li><a href="https://kl9y.com/about">About Us</a></li>
           <li><a href="https://kl9y.com/contact">Contact</a></li>
         </div>
@@ -38,6 +42,7 @@ function renderNav(){
                 <a href="https://kl9y.com/LimitlessPotential" class="navElem">New Releases</a>
                 <div class="dropdown-content">
                     <a href="https://kl9y.com/LimitlessPotential">Limitless Potential</a>
+                    <a href="https://kl9y.com/June24">JUNE '24</a>
                 </div>
             </li>
             <li style="display: inline;">
@@ -421,6 +426,13 @@ function changeRadio(radioId){
   var radioInput = document.getElementById(radioId);
   radioInput.checked = true;
   radioInput.dispatchEvent(new Event('change'));
+}
+
+function changeRadio2(radioId, picUrl){
+  var radioInput = document.getElementById(radioId);
+  radioInput.checked = true;
+  radioInput.dispatchEvent(new Event('change'));
+  document.getElementById("productImage").src = picUrl.src;
 }
 
 
