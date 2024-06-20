@@ -49,9 +49,7 @@ function renderNav(){
                 <a class="navElem">|</a>
             </li>
             
-            <li style="display: inline;">
-                <a class="navElem">|</a>
-            </li>
+            
             <li class="dropdown1">
                 <a class="navElem" href="https://kl9y.com/contact">Contact</a>
             </li>
