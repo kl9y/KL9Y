@@ -22,7 +22,7 @@ function renderNav(){
         <div class="menu-items">
           <li><a href="https://kl9y.com/">Home</a></li>
           <li><a href="https://kl9y.com/June24">New Releases</a></li>
-          <li><a href="https://kl9y.com/about">About Us</a></li>
+          
           <li><a href="https://kl9y.com/contact">Contact</a></li>
         </div>
       </div>
@@ -48,9 +48,7 @@ function renderNav(){
             <li style="display: inline;">
                 <a class="navElem">|</a>
             </li>
-            <li style="display: inline;">
-                <a class="navElem" href="https://kl9y.com/about">About Us</a>
-            </li>
+            
             <li style="display: inline;">
                 <a class="navElem">|</a>
             </li>
