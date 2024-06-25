@@ -113,6 +113,10 @@ body{
     width: 5%;
     margin-top: 2%;
 }
+.kl9yLogo2{
+  width: 10%;
+  margin-top: 2%;
+}
 .navElem{
     color:#ce6ee9; 
     text-decoration: none; 
@@ -190,6 +194,7 @@ h1{
   max-width: 100%;
   width: 100%;
   text-align: center;
+  color:#ce6ee9;
   
 }
 .buyNowBtn{
