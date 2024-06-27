@@ -41,33 +41,25 @@
             <div class="prodDetails">
                 <h1>9Y LOGO HAT</h1>
                 <p class="priceText">$ 30</p>
-                <div id="productIdForCart" class="dev">price_1NFMC8JObEa52vYfW7QYZJ6E</div>
+                <div id="productIdForCart" class="dev">prod_QMrWTfrm517mhd</div>
 
                 <div class="colorOptions">
                     <input type="radio" id="colorWhite" name="color" value="white" onchange="updateBuyNowLink(`window.location.href='https://square.link/u/dOe52I2R';` ,'../imgs/products/hat/9YHatWhite.png',
                     ['price_1NFMC8JObEa52vYfW7QYZJ6E']
                     )" checked>
-                    <label for="colorWhite">White</label>
+                    <label for="colorWhite">Standard</label>
 
                     <input type="radio" id="colorBlack" name="color" value="black" onchange="updateBuyNowLink(`window.location.href='https://square.link/u/dOe52I2R';`, '../imgs/products/hat/9YHatBlack.jpg',
                     ['price_1NJqtXJObEa52vYf8JB3K0cl']
                     )" >
-                    <label for="colorBlack">Black</label>
-                    
-                    <input type="radio" id="colorPurple" name="color" value="purple" onchange="updateBuyNowLink(`window.location.href='https://square.link/u/dOe52I2R';` ,'../imgs/products/hat/9YHatPurple.jpg',
-                    ['price_1NJquEJObEa52vYf8DRSA8BX']
-                    )">
-                    <label for="colorPurple">Purple</label>
-
-                    <input type="radio" id="colorTrucker" name="color" value="trucker" onchange="updateBuyNowLink(`window.location.href='https://square.link/u/dOe52I2R';` ,'../imgs/products/hat/TruckerHatBlack.jpg',
-                    ['price_1NOUuWJObEa52vYfEayMcswl'] )">
-                    <label for="colorTrucker">Trucker</label>
+                    <label for="colorBlack">Customized</label>
+            
 
                     
                 </div>
                 <button id="buyNowBtn" class="buyNowBtn" onclick="window.location.href='https://square.link/u/dOe52I2R';">BUY NOW</button>
    
-               
+                <button  class="buyNowBtn" onclick="addToCart(productImage.src)">ADD TO CART</button> 
 
                 <p class = "detailText">DETAILS</p>
                 <p class="detailText">100% cotton</p>
